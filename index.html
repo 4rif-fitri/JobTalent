@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>PRIM</title>
+	<title>TalentBank</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta content="Parental Relationship Information Management" name="description" />
 	<meta content="UTeM" name="author" />
@@ -16,8 +16,8 @@
 	<link href="./assets/css/app-dark.min.css" id="app-dark" rel="stylesheet" type="text/css" />
 	<link href="./assets/css/app.min.css" id="app-light" rel="stylesheet" type="text/css" />
 	<link href="./assets/css/style.css" id="app-light" rel="stylesheet" type="text/css" />
-	@include('layouts.head')
-
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body data-sidebar="dark">
@@ -32,16 +32,19 @@
 					<div class="navbar-brand-box">
 						<a href="/" class="logo logo-dark">
 							<span class="logo-sm">
-								<img src="./assets/images/logo/JobTalent-logo-cropped-cropped.svg" alt=""height="25">
+								<img src="./assets/images/logo/JobTalent-logo-cropped-cropped.svg" alt=""
+									height="25">
 							</span>
 							<span class="logo-lg">
-								<img src="./assets/landing-page/img/JobTalent-logo-cropped.svg" alt="" height="60">
+								<img src="./assets/landing-page/img/JobTalent-logo-cropped.svg" alt=""
+									height="60">
 							</span>
 						</a>
 
 						<a href="/internship" class="logo logo-light">
 							<span class="logo-sm">
-								<img src="./assets/images/logo/JobTalent-logo-cropped-cropped.svg" alt=""height="25">
+								<img src="./assets/images/logo/JobTalent-logo-cropped-cropped.svg" alt=""
+									height="25">
 							</span>
 							<span class="logo-lg">
 								<img src="./assets/images/logo/JobTalent-logo-cropped.svg" alt="" height="25">
@@ -56,7 +59,7 @@
 				</div>
 
 				<div class="d-flex">
-					<div class="dropdown d-inline-block d-lg-none ml-2">
+					<!-- <div class="dropdown d-inline-block d-lg-none ml-2">
 						<button type="button" class="btn header-item noti-icon waves-effect search-short"
 							id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false">
@@ -78,7 +81,7 @@
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> -->
 					<!-- end of search -->
 
 
@@ -92,31 +95,6 @@
 					<!-- end of full screen feature -->
 
 					<!-- user profile -->
-					<div class="dropdown d-inline-block">
-
-						<button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<img class="rounded-circle header-profile-user" src="./assets/images/users/user-4.jpg"
-								alt="Header Avatar">
-						</button>
-
-						<div class="dropdown-menu dropdown-menu-right">
-							<!-- item-->
-							<!-- item1 profile CHANGE THE ROUTE HERE-->
-							<a class="dropdown-item" href=""><i
-									class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i>
-								Profile</a>
-
-							<!-- logout -->
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item text-danger" href="javascript:void();"
-								onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-								<i class="bx bx-power-off font-size-17 align-middle mr-1 text-danger"></i>
-							</a>
-							<form id="logout-form" action="" method="POST" style="display: none;">
-							</form>
-						</div>
-					</div>
 
 				</div>
 			</div>
@@ -198,14 +176,87 @@
 		<!-- ============================================================== -->
 		<div class="main-content">
 			<div class="page-content">
-				<div class="container-fluid">
 
+				<div class="user-card">
 
-					
+					<div class="user-card-header">
+						<div class="user-card-banner">
+							<div class="waves-effect icon">
+								<i class="ti-pencil ti-md"></i>
+							</div>
+						</div>
 
+						<div class="user-profile-group">
+							<div class="profile-image">
+								<div class="waves-effect icon">
+									<i class="ti-camera ti-md"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="user-profile-ditail">
+							<h2 id="name">Lorem Lorem Bin Lorem Lorem</h2>
+							<p id="headline">Final Year Telecommunication Technology Student</p>
+							<a href="" id="uni-name">
+								<h5>Universiti Teknilal Malaysia Melaka (UTeM)</h5>
+							</a>
+							<p id="programe">IJAZAH SARJANA MUDA KEJURUTERAAN ELEKTRIK DENGAN KEPUJIAN</p>
+
+							<article id="location">
+								<p>
+									<i class="ti-location-pin ti-md"></i>
+									Melaka, Malaysia |
+									<i class="fa-solid fa-user-check verified"></i>
+									University Verified
+								</p>
+							</article>
+
+							<article class="links">
+								<a href="">
+									<i class="fa-brands fa-youtube"></i>
+									Youtube
+								</a>
+								<a href="">
+									<i class="fa-brands fa-facebook"></i>
+									FaceBook
+								</a>
+								<a href="">
+									<i class="fa-brands fa-instagram"></i>
+									Instagram
+								</a>
+								<a href="">
+									<i class="fa-brands fa-tiktok"></i>
+									Tiktok
+								</a>
+								<a href="">
+									<i class="fa-brands fa-linkedin"></i>
+									Linkedin
+								</a>
+								<a href="">
+									<i class="fa-brands fa-github"></i>
+									Github
+								</a>
+								<a href="">
+									<i class="fa-brands fa-x-twitter"></i>
+									Twitter
+								</a>
+							</article>
+
+							<div class="btn-container">
+								<button class="btn btn-primary">
+									<i class="fa-solid fa-plus"></i>
+									Add Section
+								</button>
+								<button class="btn btn-primary">
+									<i class="fa-solid fa-plus"></i>
+									Copy Link 
+								</button>
+							</div>
+						</div>
+					</div>
 
 				</div>
-				<!-- container-fluid -->
+
 			</div>
 			<!-- End Page-content -->
 		</div>
