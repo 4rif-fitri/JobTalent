@@ -30,8 +30,8 @@ p {
 	gap: 0.5rem;
 }
 
-.user-card-left > *,
-.user-card-right >*{
+.user-card-left>*,
+.user-card-right>* {
 	background-color: var(--color-white);
 }
 
@@ -143,12 +143,6 @@ p {
 	position: relative !important;
 }
 
-/* section .icon {
-	position: absolute;
-	right: 10px;
-	top: 10px; */
-}
-
 .skills a {
 	padding: 0.4rem;
 	border-radius: 5px;
@@ -190,7 +184,8 @@ hr {
 }
 
 #education article,
-#experience article {
+#experience article,
+#certifications article {
 	display: grid;
 	grid-template-columns: 3rem auto;
 }
