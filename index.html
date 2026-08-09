@@ -201,9 +201,10 @@
 
 							<div class="user-profile-ditail">
 								<div class="icon-container">
-									<div class="waves-effect icon">
+									<button type="button" class="btn btn-primary waves-effect icon"
+										data-toggle="modal" data-target="#userDetailModal">
 										<i class="ti-pencil ti-md"></i>
-									</div>
+									</button>
 								</div>
 
 								<h2 id="name">Lorem Lorem Bin Lorem Lorem</h2>
@@ -262,7 +263,8 @@
 										<i class="fa-solid fa-plus"></i>
 										Copy Link
 									</button>
-									<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+									<button type="button" class="btn btn-primary" data-toggle="modal"
+										data-target="#exampleModal">
 										Launch demo modal
 									</button>
 								</div>
@@ -857,6 +859,93 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="modal fade" id="userDetailModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title" id="exampleModalLabel">Edit intro</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<p class="required">* Indicates required</p>
+					<h4>Basic info</h4>
+					<form action="" class="d-flex flex-column mt-2">
+
+						<div class="form-group">
+							<label for="fullNameInput">Full Name</label>
+							<input type="text" name="fullNameInput" class="form-control" id="fullNameInput">
+						</div>
+
+						<div class="form-group">
+							<label for="headlineInput">Headline</label>
+							<textarea class="form-control" name="headlineInput" id="headlineInput"></textarea>
+						</div>
+
+						<section id="socialMediaInputs" class="d-flex flex-column" style="gap: 0.5rem;">
+							<h4>Social Media</h4>
+
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<button type="button" class="btn btn-outline-secondary">Action</button>
+									<button type="button"
+										class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										<span class="sr-only">Toggle Dropdown</span>
+									</button>
+									<div class="dropdown-menu">
+										<a class="dropdown-item" href="#">Action</a>
+										<a class="dropdown-item" href="#">Another action</a>
+										<a class="dropdown-item" href="#">Something else here</a>
+										<div role="separator" class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#">Separated link</a>
+									</div>
+								</div>
+								<input type="text" class="form-control"
+									aria-label="Text input with segmented dropdown button">
+							</div>
+
+							<button type="button" class="btn btn-outline-dark w-100">Add Link</button>
+
+						</section>
+
+						<section id="locationInputs">
+							<h4>Location</h4>
+							<div class="form-group">
+								<label for="countryInput">Country/Region*</label>
+								<select class="form-control" id="countryInput" name="countryInput">
+									<option selected disabled>Select Country</option>
+									<option value="Malaysia">Malaysia</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="poscodeInput">Poscode</label>
+								<input type="number" name="poscodeInput" class="form-control" id="poscodeInput">
+							</div>
+
+							<div class="form-group">
+								<label for="cityInput">City*</label>
+								<select class="form-control" id="cityInput" name="cityInput">
+									<option selected disabled>Select City</option>
+									<option value="Kulai">Kulai</option>
+								</select>
+							</div>
+						</section>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- END layout-wrapper -->
 
 	<!-- JAVASCRIPT -->
@@ -877,7 +966,10 @@
 				$('body').removeClass('vertical-collpsed');
 			}
 		});
-
+		// $(document).ready(function () {
+		// 	// Kod ini akan memaksa modal untuk show
+		// 	$('#userDetailModal').modal('show');
+		// });
 	</script>
 </body>
 
