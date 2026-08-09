@@ -170,7 +170,6 @@
 			</div>
 		</div>
 
-
 		<!-- ============================================================== -->
 		<!-- Start right Content here -->
 		<!-- ============================================================== -->
@@ -884,31 +883,9 @@
 							<label for="headlineInput">Headline</label>
 							<textarea class="form-control" name="headlineInput" id="headlineInput"></textarea>
 						</div>
+
 						<hr>
-						<section id="socialMediaInputs" class="d-flex flex-column" style="gap: 0.5rem;">
-							<h4>Social Media</h4>
 
-							<div class="input-group social-group">
-								<select class="form-select" name="social_platform" id="socialPlatform">
-									<option value="" selected disabled>Select App</option>
-									<option value="linkedin">LinkedIn</option>
-									<option value="github">GitHub</option>
-									<option value="youtube">YouTube</option>
-									<option value="facebook">Facebook</option>
-									<option value="instagram">Instagram</option>
-									<option value="tiktok">TikTok</option>
-									<option value="twitter">X (Twitter)</option>
-									<option value="website">Website</option>
-								</select>
-								<input type="url" class="form-control" name="social_url" id="socialUrl"
-									placeholder="https://example.com/username">
-								<button class="btn btn-outline-danger"></button>
-							</div>
-
-							<button type="button" class="btn btn-outline-dark w-100">Add Link</button>
-
-						</section>
-						<hr>
 						<section id="locationInputs">
 							<h4>Location</h4>
 							<div class="form-group">
@@ -933,11 +910,41 @@
 							</div>
 						</section>
 
+						<hr>
+
+						<section id="socialMediaInputs" class="d-flex flex-column" style="gap: 0.5rem;">
+							<div class="d-flex justify-content-between">
+								<h4>Social Media Links</h4>
+								<button type="button" class="btn btn-primary">Add Link</button>
+							</div>
+
+							<div class="input-group social-group">
+								<select class="form-select" name="social_platform" id="socialPlatform">
+									<option value="" selected disabled>Select App</option>
+									<option value="linkedin">LinkedIn</option>
+									<option value="github">GitHub</option>
+									<option value="youtube">YouTube</option>
+									<option value="facebook">Facebook</option>
+									<option value="instagram">Instagram</option>
+									<option value="tiktok">TikTok</option>
+									<option value="twitter">X (Twitter)</option>
+									<option value="website">Website</option>
+								</select>
+								<input type="url" class="form-control" name="social_url" id="socialUrl"
+									placeholder="https://example.com/username">
+								<button type="button" class="btn btn-outline-danger">
+									<i class="fa-solid fa-trash"></i>
+								</button>
+							</div>
+						</section>
+
+
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-primary">Save</button>
+					<button type="button" class="btn btn-primary">Next</button>
 				</div>
 			</div>
 		</div>
