@@ -859,7 +859,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="userDetailModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -884,34 +884,31 @@
 							<label for="headlineInput">Headline</label>
 							<textarea class="form-control" name="headlineInput" id="headlineInput"></textarea>
 						</div>
-
+						<hr>
 						<section id="socialMediaInputs" class="d-flex flex-column" style="gap: 0.5rem;">
 							<h4>Social Media</h4>
 
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<button type="button" class="btn btn-outline-secondary">Action</button>
-									<button type="button"
-										class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-										data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<span class="sr-only">Toggle Dropdown</span>
-									</button>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="#">Action</a>
-										<a class="dropdown-item" href="#">Another action</a>
-										<a class="dropdown-item" href="#">Something else here</a>
-										<div role="separator" class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Separated link</a>
-									</div>
-								</div>
-								<input type="text" class="form-control"
-									aria-label="Text input with segmented dropdown button">
+							<div class="input-group social-group">
+								<select class="form-select" name="social_platform" id="socialPlatform">
+									<option value="" selected disabled>Select App</option>
+									<option value="linkedin">LinkedIn</option>
+									<option value="github">GitHub</option>
+									<option value="youtube">YouTube</option>
+									<option value="facebook">Facebook</option>
+									<option value="instagram">Instagram</option>
+									<option value="tiktok">TikTok</option>
+									<option value="twitter">X (Twitter)</option>
+									<option value="website">Website</option>
+								</select>
+								<input type="url" class="form-control" name="social_url" id="socialUrl"
+									placeholder="https://example.com/username">
+								<button class="btn btn-outline-danger"></button>
 							</div>
 
 							<button type="button" class="btn btn-outline-dark w-100">Add Link</button>
 
 						</section>
-
+						<hr>
 						<section id="locationInputs">
 							<h4>Location</h4>
 							<div class="form-group">
@@ -966,10 +963,10 @@
 				$('body').removeClass('vertical-collpsed');
 			}
 		});
-		// $(document).ready(function () {
-		// 	// Kod ini akan memaksa modal untuk show
-		// 	$('#userDetailModal').modal('show');
-		// });
+		$(document).ready(function () {
+			// Kod ini akan memaksa modal untuk show
+			$('#userDetailModal').modal('show');
+		});
 	</script>
 </body>
 

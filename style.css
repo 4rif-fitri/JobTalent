@@ -190,8 +190,13 @@ hr {
 	grid-template-columns: 3rem auto;
 }
 
-.input-group{
-	outline: black !important;
+.social-group .form-select {
+	flex: 0 0 150px;
+	max-width: 80px;
+}
+
+.social-group .form-control {
+	min-width: 0;
 }
 
 @media (max-width: 1400px) {
