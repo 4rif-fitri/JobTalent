@@ -4,6 +4,10 @@ body {
 	background-color: var(--color-border-light);
 }
 
+a{
+	text-decoration: unset !important;
+}
+
 h1,
 h2,
 h3,
