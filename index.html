@@ -61,16 +61,17 @@
 				<div class="d-flex">
 					<!-- user profile -->
 					<div class="dropdown d-inline-block">
-					
-						<button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">
-							<img class="rounded-circle header-profile-user" src="./assets/images/users/user-4.jpg" alt="Header Avatar">
+
+						<button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<img class="rounded-circle header-profile-user"
+								src="./assets/images/users/user-4.jpg" alt="Header Avatar">
 						</button>
-					
+
 						<div class="dropdown-menu dropdown-menu-right">
-							<!-- item-->
 							<!-- item1 profile CHANGE THE ROUTE HERE-->
-							<a class="dropdown-item" href=""><i class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i>
+							<a class="dropdown-item" href=""><i
+									class="mdi mdi-account-circle font-size-17 align-middle mr-1"></i>
 								Profile
 							</a>
 							<!-- logout -->
@@ -334,8 +335,6 @@
 									</div>
 								</div>
 
-								<hr>
-
 							</article>
 
 							<hr>
@@ -405,8 +404,6 @@
 								<hr>
 							</article>
 
-							<hr>
-
 							<div href="" class="d-flex justify-content-center align-items-center">
 								<h4>Show All</h4>
 							</div>
@@ -474,8 +471,6 @@
 
 							</article>
 
-							<hr>
-
 							<div href="" class="d-flex justify-content-center align-items-center">
 								<h4>Show All</h4>
 							</div>
@@ -541,8 +536,6 @@
 								<hr>
 							</article>
 
-							<hr>
-
 							<div href="" class="d-flex justify-content-center align-items-center">
 								<h4>Show All</h4>
 							</div>
@@ -563,7 +556,7 @@
 
 							<hr>
 
-							<section class="m-1">
+							<div class="m-1">
 								<div>
 									<!-- <img src="./utemjpg.jpg" alt=""
 										style="width: 50px !important; border-radius: 50%;"> -->
@@ -595,11 +588,7 @@
 
 								<hr>
 
-							</section>
-
-
-
-							<hr>
+							</div>
 
 							<div href="" class="d-flex justify-content-center align-items-center">
 								<h4>Show All</h4>
@@ -704,14 +693,14 @@
 
 							<article class="m-1">
 								<div class="col d-flex m-1 justify-content-between">
-									<h4>Bahasa Melayu</h4>
+									<h5>Bahasa Melayu</h5>
 									<p>Native</p>
 								</div>
 							</article>
 							<article class="m-1">
 								<div class="col d-flex justify-content-between m-1">
-									<h4>English</h4>
-									<p>Professional working proficiency</p>
+									<h5>English</h5>
+									<p style="text-align: end;">Professional working proficiency</=>
 								</div>
 							</article>
 							<!-- <hr>
@@ -737,20 +726,20 @@
 
 							<article class="m-1">
 								<div class="col d-flex justify-content-between m-1">
-									<h4>
+									<h5>
 										<i class="fa-solid fa-database"></i>
 										Database
-									</h4>
+									</h5>
 									<p>Advanced</p>
 								</div>
 							</article>
 
 							<article class="m-1">
 								<div class="col d-flex justify-content-between m-1">
-									<h4>
+									<h5>
 										<i class="fa-brands fa-html5"></i>
 										HTML
-									</h4>
+									</h5>
 									<p>Advanced</p>
 								</div>
 							</article>
@@ -803,7 +792,16 @@
 					<form action="" class="d-flex flex-column mt-2">
 
 						<div class="form-group">
-							<label for="headlineInput"><h4>Headline</h4></label>
+							<label for="nameInput">
+								<h4>Full Name</h4>
+							</label>
+							<input type="text" class="form-control" name="nameInput" id="nameInput"></input>
+						</div>
+
+						<div class="form-group">
+							<label for="headlineInput">
+								<h4>Headline</h4>
+							</label>
 							<textarea class="form-control" name="headlineInput" id="headlineInput"></textarea>
 						</div>
 
@@ -824,8 +822,8 @@
 									<div class="form-group col">
 										<div id="poscodeContainer">
 											<label for="poscodeInput">Poscode</label>
-											<input maxlength="5" type="number" name="poscodeInput" class="form-control"
-												id="poscodeInput">
+											<input maxlength="5" type="number" name="poscodeInput"
+												class="form-control" id="poscodeInput">
 										</div>
 									</div>
 
@@ -858,7 +856,8 @@
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button id="btnCloseEditIntro" class="btn btn-secondary" type="reset" data-dismiss="modal">Close</button>
+					<button id="btnCloseEditIntro" class="btn btn-secondary" type="reset"
+						data-dismiss="modal">Close</button>
 					<button id="btnSaveEditIntro" class="btn btn-primary" type="submit">Save</button>
 				</div>
 			</div>
@@ -912,7 +911,7 @@
 				]
 			};
 
-			$("#countryInput").on("change", function(e){
+			$("#countryInput").on("change", function (e) {
 				if ($(this).val() === "Malaysia") {
 					$("#poscodeContainer").show();
 				} else {
@@ -926,7 +925,7 @@
 
 			$("#poscodeInput").on("input", e => {
 				let poskod = e.target.value;
-			
+
 				if (poskod.length === 5) {
 					let jumpaBandar = dataNegeri.city.find(item => item.postcode.includes(poskod));
 
