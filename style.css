@@ -128,7 +128,7 @@ p {
 	gap: 0.5rem;
 }
 
-.links>a {
+.links > div {
 	padding: 0.2rem;
 	background-color: var(--color-background);
 }
