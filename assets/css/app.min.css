@@ -555,6 +555,7 @@ body[data-layout=horizontal] .footer {
 }
 
 .vertical-collpsed .vertical-menu {
+  bottom: 0 !important; 
   position: absolute;
   width: 70px !important;
   z-index: 5;

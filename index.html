@@ -10,14 +10,18 @@
 	<!-- App favicon -->
 	<link rel="shortcut icon" href="./assets/images/logo/JobTalent-logo-cropped-cropped.svg">
 	<!-- Web Application Manifest -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-	integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 	<link href="./assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-	<link href="./assets/css/app-dark.min.css" id="app-dark" rel="stylesheet" type="text/css" />
+	<!-- <link href="./assets/css/app-dark.min.css" id="app-dark" rel="stylesheet" type="text/css" /> -->
 	<link href="./assets/css/app.min.css" id="app-light" rel="stylesheet" type="text/css" />
-	<link href="./assets/css/style.css" id="app-light" rel="stylesheet" type="text/css" />
+	<!-- <link href="./assets/css/style.css" id="app-light" rel="stylesheet" type="text/css" /> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="./style.css">
+	<style>
+		.vertical-menu{
+			position: fixed;
+		}
+	</style>
 </head>
 
 <body data-sidebar="dark">
@@ -59,43 +63,7 @@
 				</div>
 
 				<div class="d-flex">
-					<!-- <div class="dropdown d-inline-block d-lg-none ml-2">
-						<button type="button" class="btn header-item noti-icon waves-effect search-short"
-							id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false">
-							<i class="mdi mdi-magnify"></i>
-						</button>
-						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-							aria-labelledby="page-header-search-dropdown">
-
-							<form class="p-3">
-								<div class="form-group m-0">
-									<div class="input-group">
-										<input type="text" class="form-control" placeholder="Search ..."
-											aria-label="Recipient's username">
-										<div class="input-group-append">
-											<button class="btn btn-primary" type="submit"><i
-													class="mdi mdi-magnify"></i></button>
-										</div>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div> -->
-					<!-- end of search -->
-
-
-					<!-- full screen feature -->
-					<div class="dropdown d-none d-lg-inline-block">
-						<button type="button" class="btn header-item noti-icon waves-effect"
-							data-toggle="fullscreen">
-							<i class="mdi mdi-fullscreen"></i>
-						</button>
-					</div>
-					<!-- end of full screen feature -->
-
-					<!-- user profile -->
-
+					<h4>Profile</h4>
 				</div>
 			</div>
 		</header>
@@ -103,7 +71,7 @@
 		<!-- ========== Left Sidebar Start ========== -->
 		<div class="vertical-menu">
 
-			<div data-simplebar class="h-100">
+			<div data-simplebar class="h-100" style="height: 100vh; ">
 
 				<!--- Sidemenu -->
 				<div id="sidebar-menu">
@@ -885,8 +853,9 @@
 	<!-- END layout-wrapper -->
 
 	<!-- JAVASCRIPT -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+	<script src="./assets/libs/jquery/jquery.min.js"></script>
+	<script src="./assets/libs/jquery-ui/jquery-ui.min.js"></script>
+	<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 	<script src="./assets/libs/metismenu/metismenu.min.js"></script>
 	<script src="./assets/libs/simplebar/simplebar.min.js"></script>
