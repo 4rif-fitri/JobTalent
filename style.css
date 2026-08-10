@@ -143,8 +143,9 @@ p {
 	position: relative !important;
 }
 
-.skills a {
-	padding: 0.4rem;
+.skills div ,
+.user-profile-ditail .skills a{
+	padding: 0.1rem 0.4rem;
 	border-radius: 5px;
 }
 

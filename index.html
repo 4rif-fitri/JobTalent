@@ -271,9 +271,9 @@
 							</p>
 
 							<div class="icon-container">
-								<div class="waves-effect icon">
+								<button data-toggle="modal" data-target="#aboutModal" class="waves-effect icon">
 									<i class="ti-pencil ti-md"></i>
-								</div>
+								</button>
 							</div>
 						</section>
 
@@ -281,12 +281,12 @@
 							<h2>Education</h2>
 
 							<div class="icon-container">
-								<div class="icon">
+								<button data-toggle="modal" data-target="#educationModal" class="waves-effect icon">
 									<i class="fa-solid fa-plus"></i>
-								</div>
-								<div class="icon">
+								</button>
+								<a href="" class="icon">
 									<i class="ti-pencil ti-md"></i>
-								</div>
+								</a>
 							</div>
 							<hr>
 
@@ -326,8 +326,6 @@
 											style="background-image: url('./cover-image.png');"></div>
 										<div class="image rounded-5 m-1"
 											style="background-image: url('./cover-image.png');"></div>
-										<div class="image rounded-5 m-1"
-											style="background-image: url('./cover-image.png');"></div>
 										<div class="image rounded-5 m-1 d-flex justify-content-center align-items-center"
 											style="background-image: url('./cover-image.png'); filter: brightness(0.5);">
 											<h4 class="text-white">+5</h4>
@@ -349,12 +347,12 @@
 							<h2>Project</h2>
 
 							<div class="icon-container">
-								<div class="icon">
+								<button data-toggle="modal" data-target="#educationModal" class="waves-effect icon">
 									<i class="fa-solid fa-plus"></i>
-								</div>
-								<div class="icon">
+								</button>
+								<a href="" class="icon">
 									<i class="ti-pencil ti-md"></i>
-								</div>
+								</a>
 							</div>
 
 							<hr>
@@ -377,7 +375,6 @@
 										<span>Vue</span>
 									</div>
 									<div href="" class="waves-effect bg-secondary">
-										<i class="fa-brands fa-react"></i>
 										<span>React</span>
 									</div>
 									<div href="" class="waves-effect bg-secondary">
@@ -389,8 +386,6 @@
 								</div>
 
 								<div class="images d-flex flex-wrap">
-									<div class="image rounded-5 m-1"
-										style="background-image: url('./cover-image.png');"></div>
 									<div class="image rounded-5 m-1"
 										style="background-image: url('./cover-image.png');"></div>
 									<div class="image rounded-5 m-1"
@@ -458,8 +453,6 @@
 											style="background-image: url('./cover-image.png');"></div>
 										<div class="image rounded-5 m-1"
 											style="background-image: url('./cover-image.png');"></div>
-										<div class="image rounded-5 m-1"
-											style="background-image: url('./cover-image.png');"></div>
 										<div class="image rounded-5 m-1 d-flex justify-content-center align-items-center"
 											style="background-image: url('./cover-image.png'); filter: brightness(0.5);">
 											<h4 class="text-white">+5</h4>
@@ -521,8 +514,6 @@
 								</div>
 
 								<div class="images d-flex flex-wrap">
-									<div class="image rounded-5 m-1"
-										style="background-image: url('./cover-image.png');"></div>
 									<div class="image rounded-5 m-1"
 										style="background-image: url('./cover-image.png');"></div>
 									<div class="image rounded-5 m-1"
@@ -703,11 +694,6 @@
 									<p style="text-align: end;">Professional working proficiency</=>
 								</div>
 							</article>
-							<!-- <hr>
-
-							<div href="" class="d-flex justify-content-center align-items-center">
-								<h4>Show All</h4>
-							</div> -->
 
 						</section>
 
@@ -743,10 +729,6 @@
 									<p>Advanced</p>
 								</div>
 							</article>
-							<!-- <hr> -->
-							<!-- <div href="" class="d-flex justify-content-center align-items-center">
-								<h4>Show All</h4>
-							</div> -->
 
 						</section>
 					</div>
@@ -758,26 +740,99 @@
 		<!-- end main content-->
 	</div>
 
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+	<!-- TEMPLATE -->
+	<div class="modal fade" id="aasa" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<h5 class="modal-title" id="exampleModalLabel">Edit About</h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
 				<div class="modal-body">
-					...
+
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-primary">Save</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<!-- TEMPLATE -->
 
+	<!-- Project MODAL -->	
+	<div class="modal fade" id="projectModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Edit Project</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+	
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Project MODAL -->
+
+	<!-- Education MODAL -->
+	<div class="modal fade" id="educationModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Edit Education</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Education MODAL -->
+
+	<!-- ABOUT MODAL -->
+	<div class="modal fade" id="aboutModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Edit About</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- ABOUT MODAL -->
+
+	<!-- Full Name HeadLine Location Links MODAL -->
 	<div class="modal fade" id="userDetailModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
 		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
@@ -863,6 +918,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Full Name HeadLine Location Links MODAL -->
 
 	<!-- END layout-wrapper -->
 
