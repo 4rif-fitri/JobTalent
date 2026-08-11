@@ -192,8 +192,8 @@
 						</article>
 
 						<div class="btn-container">
-							<button class="btn btn-primary">
-								<i class="fa-solid fa-plus"></i>
+							<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+								data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
 								Add Section
 							</button>
 						</div>
@@ -597,6 +597,68 @@
 
 		</div>
 
+		<div class="offcanvas m-auto" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasBottomLabel">Add Section</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body small">
+				<div class="accordion" id="accordionExample">
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+								aria-expanded="true" aria-controls="collapseOne">
+								Accordion Item #1
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+							<div class="list-group">
+								<button type="button" class="list-group-item list-group-item-action">The current </button>
+								<button type="button" class="list-group-item list-group-item-action">A second button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A third button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A disabled button item</button>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Accordion Item #2
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="list-group">
+								<button type="button" class="list-group-item list-group-item-action">The current </button>
+								<button type="button" class="list-group-item list-group-item-action">A second button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A third button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A disabled button item</button>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Accordion Item #3
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+							<div class="list-group">
+								<button type="button" class="list-group-item list-group-item-action">The current </button>
+								<button type="button" class="list-group-item list-group-item-action">A second button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A third button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A fourth button item</button>
+								<button type="button" class="list-group-item list-group-item-action">A disabled button item</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
 			<div class="modal-dialog modal-xl modal-dialog-centered modal-lg">
 				<div class="modal-content bg-dark">
@@ -614,7 +676,8 @@
 									<img src="cover-image.png" class="d-block w-100" alt="Preview 1">
 									<div class="carousel-caption d-block bg-dark bg-opacity-75 rounded p-2">
 										<h5>Title Image 1</h5>
-										<p class="d-none d-md-block">Description for the first image goes here.</p>
+										<p class="d-none d-md-block">Description for the first image goes
+											here.</p>
 									</div>
 								</div>
 
@@ -622,7 +685,8 @@
 									<img src="cover-image.png" class="d-block w-100" alt="Preview 2">
 									<div class="carousel-caption d-block bg-dark bg-opacity-75 rounded p-2">
 										<h5>Title Image 2</h5>
-										<p class="d-none d-md-block">Description for the second image goes here.</p>
+										<p class="d-none d-md-block">Description for the second image goes
+											here.</p>
 									</div>
 								</div>
 
@@ -630,7 +694,8 @@
 									<img src="cover-image.png" class="d-block w-100" alt="Preview 3">
 									<div class="carousel-caption d-block bg-dark bg-opacity-75 rounded p-2">
 										<h5>Title Image 3</h5>
-										<p class="d-none d-md-block">Description for the third image goes here.</p>
+										<p class="d-none d-md-block">Description for the third image goes
+											here.</p>
 									</div>
 								</div>
 
@@ -1218,14 +1283,32 @@
 			});
 
 			function goToSlide(slideIndex) {
-				// Panggil ID carousel kita
 				var myCarousel = document.getElementById('projectImageCarousel');
-				// Guna API Bootstrap Carousel untuk tukar slide
 				var carousel = bootstrap.Carousel.getOrCreateInstance(myCarousel);
 				carousel.to(slideIndex);
 			}
 
 		});
+
+		function adjustOffcanvasPosition() {
+			var offcanvasEl = document.getElementById('offcanvasBottom');
+
+			if (window.innerWidth >= 768) {
+				offcanvasEl.classList.remove('offcanvas-bottom');
+				offcanvasEl.classList.add('offcanvas-end');
+
+				offcanvasEl.style.height = "100vh";
+				offcanvasEl.style.width = "400px";
+			} else {
+				offcanvasEl.classList.remove('offcanvas-end');
+				offcanvasEl.classList.add('offcanvas-bottom');
+
+				offcanvasEl.style.height = "60vh";
+				offcanvasEl.style.width = "100%";
+			}
+		}
+		adjustOffcanvasPosition();
+		window.addEventListener('resize', adjustOffcanvasPosition);
 	</script>
 </body>
 
