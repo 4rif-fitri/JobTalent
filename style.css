@@ -231,6 +231,31 @@ hr {
 	border-radius: 8px;
 }
 
+.ui-autocomplete {
+	max-height: 300px;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	background: white;
+	border: 1px solid #ddd;
+	border-radius: 0 0 6px 6px;
+
+	padding: 0;
+	z-index: 9999 !important;
+}
+
+.ui-menu .ui-menu-item-wrapper {
+	padding: 12px;
+	cursor: pointer;
+}
+
+.ui-menu .ui-state-active {
+	margin: 0;
+	border: none;
+	background: #ddd;
+	color: #333;
+}
+
 @media (max-width: 1400px) {
 	.user-card {
 		grid-template-columns: 1fr;

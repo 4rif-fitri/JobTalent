@@ -18,6 +18,7 @@
 	<!-- <link href="./assets/css/style.css" id="app-light" rel="stylesheet" type="text/css" /> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 	<link rel="stylesheet" href="./style.css">
+	
 </head>
 
 <body data-sidebar="dark">
@@ -740,34 +741,71 @@
 
 
 	<!-- About Modal -->
-	<div class="modal fade" id="aboutModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal fade" id="aboutModal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+		aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
 			<div class="modal-content">
+
 				<div class="modal-header">
 					<h4 class="modal-title" id="aboutModalLabel">Edit About</h4>
+
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 				</div>
+
 				<div class="modal-body">
+
 					<form action="" id="aboutModalForm" class="d-flex flex-column mt-2">
 
+						<!-- About -->
 						<div class="form-group">
 							<label for="headlineInput">
 								<h4>About</h4>
 							</label>
-							<textarea class="form-control" name="about" id="headlineInput"></textarea>
+
+							<textarea class="form-control" name="about" id="headlineInput"
+								maxlength="255"></textarea>
 						</div>
+
 						<div class="d-flex justify-content-between">
 							<div></div>
 							<p>10/255</p>
 						</div>
+
+
+						<!-- Skills -->
+						<div class="form-group mt-3">
+
+							<label for="skillInput">
+								<h4>Skills</h4>
+							</label>
+
+							<div class="position-relative">
+
+								<input type="text" class="form-control" id="skillInput"
+									placeholder="Search skills..." autocomplete="off">
+
+							</div>
+
+						</div>
+
 					</form>
+
 				</div>
+
 				<div class="modal-footer">
-					<button id="btnCloseEditAbout" class="btn btn-secondary" type="reset" data-dismiss="modal">Close</button>
-					<button id="btnSaveEditAbout" class="btn btn-primary" type="submit">Save</button>
+
+					<button id="btnCloseEditAbout" class="btn btn-secondary" type="reset" data-dismiss="modal">
+						Close
+					</button>
+
+					<button id="btnSaveEditAbout" class="btn btn-primary" type="submit" form="aboutModalForm">
+						Save
+					</button>
+
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -882,7 +920,8 @@
 
 			$("#stateContainer").hide();
 			$("#cityContainer").hide();
-
+			console.log("jQuery:", $.fn.jquery);
+			console.log("jQuery UI:", $.ui?.version);
 			const dataMalaysia = [
 				{
 					"name": "Melaka",
@@ -897,7 +936,28 @@
 					"city": ["Shah Alam", "Petaling Jaya", "Subang Jaya", "Klang", "Sepang", "Kajang", "Gombak"]
 				}
 			];
+			const skills = [
+				"Software as a Service (SaaS)",
+				"Quality Assurance",
+				"Customer Service",
+				"Management",
+				"Administrative Assistance",
+				"English as a Second Language (ESL)",
+				"Project Management",
+				"Risk Assessment",
+				"JavaScript",
+				"PHP",
+				"Laravel",
+				"MySQL",
+				"HTML",
+				"CSS"
+			];
 
+			$("#skillInput").autocomplete({
+				source: skills,
+				minLength: 1,
+				appendTo: "#aboutModal"
+			});
 			$("#countryInput").on("change", function () {
 				if ($(this).val() === "Malaysia") {
 					$("#stateContainer").show();
