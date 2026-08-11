@@ -177,12 +177,7 @@
 								<i class="fa-brands fa-x-twitter"></i>
 								Twitter
 							</a>
-							<button data-bs-toggle="modal" data-bs-target="#addSocialMediaLinkModal"
-								class="btn badge text-bg-primary">
-								<i class="fa-solid fa-pencil"></i>
-								Add
-							</button>
-							<a href="" class="btn badge text-bg-primary">
+							<a href="./links.html" class="btn badge text-bg-primary">
 								<i class="fa-solid fa-pencil"></i>
 								Edit
 							</a>
@@ -224,9 +219,6 @@
 					<h3 class="fw-bold text-sm-center text-lg-start">Education</h3>
 
 					<div class="icon-container">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./education.html" type="button" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -294,9 +286,6 @@
 					<h3 class="fw-bold text-sm-center text-lg-start">Project</h3>
 
 					<div class="icon-container">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./project.html" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -353,9 +342,6 @@
 					<h3 class="fw-bold text-sm-center text-lg-start">Experience</h3>
 
 					<div class="icon-container">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./experience.html" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -415,12 +401,9 @@
 				</section>
 
 				<section id="Honors_awards" class="d-flex flex-column gap-1">
-					<h3 class="fw-bold text-sm-center text-lg-start">Honors & Awards </h3>
+					<h3 class="fw-bold text-sm-center text-lg-start">Honors & Awards</h3>
 
 					<div class="icon-container">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./honors&awards.html" type="button" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -481,9 +464,6 @@
 					<h3 class="fw-bold text-sm-center text-lg-start">Certifications </h3>
 
 					<div class="icon-container">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./certifications.html" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -548,10 +528,6 @@
 					<h3 class="fw-bold text-sm-center text-lg-start">Languages</h3>
 
 					<div class="icon-container">
-						<button data-bs-toggle="modal" data-bs-target="#addLanguagesModal" type="button"
-							class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./languages.html" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -572,10 +548,6 @@
 				<section id="skills" class="d-flex flex-column gap-1">
 					<h3 class="fw-bold text-sm-center text-lg-start">Skills</h3>
 					<div class="icon-container">
-						<button data-bs-toggle="modal" data-bs-target="#addSkillModal" type="button"
-							class="btn btn-secondary icon">
-							<i class="fa-solid fas fa-plus"></i>
-						</button>
 						<a href="./skills.html" class="btn btn-secondary icon">
 							<i class="fa-solid fa-pencil"></i>
 						</a>
@@ -770,93 +742,6 @@
 
 					</form>
 
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="addSkillModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-
-					<form id="skillForm" action="#" method="POST">
-
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Add Skill</h1>
-						</div>
-
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<select class="form-select" id="skillSelect" name="skill" required>
-									<option selected disabled value="">Select Skill</option>
-									<option value="PHP">PHP</option>
-									<option value="Laravel">Laravel</option>
-									<option value="JavaScript">JavaScript</option>
-									<option value="Vue">Vue.js</option>
-									<option value="React">React</option>
-									<option value="MySQL">MySQL</option>
-									<option value="HTML_CSS">HTML & CSS</option>
-								</select>
-							</div>
-							<div class="input-group mb-3">
-								<select class="form-select" id="proficiencySelect" name="proficiency" required>
-									<option selected disabled value="">Select Proficiency</option>
-									<option value="Beginner">Beginner</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Advanced">Advanced</option>
-									<option value="Expert">Expert</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="modal-footer">
-							<button type="button" class="btn btn-danger" id="btnCancelEditSkill"
-								data-bs-dismiss="modal">Cancel</button>
-							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
-						</div>
-
-					</form>
-
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade" id="addLanguagesModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="h3 modal-title fs-5">Add Languages</h1>
-					</div>
-
-					<div class="modal-body">
-
-						<div class="input-group mb-3">
-							<select class="form-select" id="languageSelect" name="language">
-								<option selected disabled value="">Select Language</option>
-								<option value="1">Malay</option>
-								<option value="2">English</option>
-								<option value="3">Mandarin</option>
-								<option value="4">Tamil</option>
-								<option value="5">Arabic</option>
-								<option value="6">Japanese</option>
-							</select>
-						</div>
-						<div class="input-group mb-3">
-							<select class="form-select" id="proficiencySelect" name="proficiency">
-								<option selected disabled value="">Select Proficiency</option>
-								<option value="Native">Native</option>
-								<option value="Fluent">Fluent</option>
-								<option value="Intermediate">Intermediate</option>
-								<option value="Basic">Basic</option>
-							</select>
-						</div>
-
-					</div>
-
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" id="btnCencelEditIntro"
-							data-bs-dismiss="modal">Cencel</button>
-						<button type="button" class="btn btn-primary">Save</button>
-					</div>
 				</div>
 			</div>
 		</div>
