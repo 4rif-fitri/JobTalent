@@ -97,13 +97,13 @@ p {
 	right: 10px;
 } */
 
-.user-profile-ditail {
+.user-profile-detail {
 	margin-top: 1rem;
 	padding: 1rem;
 	position: relative;
 }
 
-.user-profile-ditail .waves-effect {
+.user-profile-detail .waves-effect {
 	right: 10px;
 	top: 10px;
 }
@@ -128,7 +128,7 @@ p {
 	gap: 0.5rem;
 }
 
-.links > div {
+.links>div {
 	padding: 0.2rem;
 	background-color: var(--color-background);
 }
@@ -143,8 +143,8 @@ p {
 	position: relative !important;
 }
 
-.skills div ,
-.user-profile-ditail .skills a{
+.skills div,
+.user-profile-detail .skills a {
 	padding: 0.1rem 0.4rem;
 	border-radius: 5px;
 }
