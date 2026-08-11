@@ -11,7 +11,7 @@ h4,
 h5,
 h6,
 p {
-	margin-bottom: unset !important;
+	margin-bottom: unset;
 }
 
 .user-card {
@@ -101,6 +101,11 @@ p {
 	margin-top: 1rem;
 	padding: 1rem;
 	position: relative;
+}
+
+.user-profile-detail .waves-effect {
+	right: 10px;
+	top: 10px;
 }
 
 .verified {
@@ -249,22 +254,6 @@ hr {
 	border: none;
 	background: #ddd;
 	color: #333;
-}
-
-a {
-	text-decoration: unset !important;
-}
-
-.user-card-header .icon {
-	position: absolute;
-	right: 10px;
-	top: 10px;
-}
-
-.profile-image .icon {
-	position: absolute;
-	bottom: 10px;
-	right: 10px;
 }
 
 @media (max-width: 1400px) {
