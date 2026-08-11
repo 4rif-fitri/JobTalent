@@ -11,7 +11,7 @@ h4,
 h5,
 h6,
 p {
-	margin-bottom: unset;
+	margin-bottom: unset !important;
 }
 
 .user-card {
@@ -101,11 +101,6 @@ p {
 	margin-top: 1rem;
 	padding: 1rem;
 	position: relative;
-}
-
-.user-profile-detail .waves-effect {
-	right: 10px;
-	top: 10px;
 }
 
 .verified {
