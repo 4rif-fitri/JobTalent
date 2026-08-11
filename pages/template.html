@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TalentBank</title>
+<link rel="shortcut icon" href="" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="../libs/bootstrap.min.css">
+<script>
+	if (window.innerWidth > 768 && localStorage.getItem("sidebarCollapsed") === "true") {
+		document.documentElement.classList.add("sidebar-collapsed-init");
+	}
+</script>
+<link rel="stylesheet" href="../style/layout.css">
+<link rel="stylesheet" href="../style/style.css">
+
+
+<body>
+
+	<!-- SIDEBAR -->
+	<aside class="sidebar">
+
+		<!-- LOGO -->
+		<div class="sidebar-logo">
+			<i class="fa-solid fa-graduation-cap"></i>
+			<span>TalentBank</span>
+		</div>
+
+		<!-- MENU -->
+		<nav class="sidebar-menu">
+
+			<!-- Dashboard -->
+			<div class="sidebar-item">
+				<a href="index.html" class="sidebar-link">
+					<i class="fa-solid fa-gauge-high menu-icon"></i>
+					<span class="menu-text">
+						Index
+					</span>
+				</a>
+			</div>
+
+			<!-- SUBMENU -->
+			<div class="sidebar-item has-submenu">
+				<a href="#" class="sidebar-link submenu-toggle">
+					<i class="fa-regular fa-user menu-icon"></i>
+					<span class="menu-text">My Profile</span>
+					<i class="fa-solid fa-chevron-right submenu-arrow"></i>
+				</a>
+
+				<ul class="submenu">
+					<li>
+						<a href="profile.html" class="submenu-link">
+							View Profile
+						</a>
+					</li>
+					<li>
+						<a href="edit-profile.html" class="submenu-link">
+							Edit Profile
+						</a>
+					</li>
+					<li>
+						<a href="employment-status.html" class="submenu-link">Employment Status
+						</a>
+					</li>
+				</ul>
+			</div>
+
+			<div class="sidebar-item">
+				<a href="resume.html" class="sidebar-link">
+					<i class="fa-regular fa-file menu-icon"></i>
+					<span class="menu-text">Resume</span>
+				</a>
+			</div>
+
+
+			<div class="sidebar-item">
+				<a href="random.html" class="sidebar-link">
+					<i class="fa-regular fa-file menu-icon"></i>
+					<span class="menu-text">Random</span>
+				</a>
+			</div>
+		</nav>
+
+	</aside>
+
+	<div class="sidebar-overlay"></div>
+
+	<header class="topbar">
+
+		<div class="topbar-left">
+			<button type="button" class="menu-toggle" id="menuToggle">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+		</div>
+
+		<div class="topbar-right">
+
+			<button type="button" class="profile-btn" id="profileBtn">
+				<i class="fa-solid fa-ellipsis"></i>
+			</button>
+
+			<div class="profile-dropdown" id="profileDropdown">
+				<a href="profile.html">
+					<i class="fa-solid fa-circle-user"></i>
+					Profile
+				</a>
+
+				<a href="logout.html" class="logout">
+					<i class="fa-solid fa-right-from-bracket"></i>
+					Logout
+				</a>
+			</div>
+
+		</div>
+	</header>
+
+	<main class="main-content">
+		<div class="content">
+			<div class="card">
+				<h2>Profile</h2>
+				<p>
+					Main profile content.
+				</p>
+			</div>
+		</div>
+	</main>
+
+	<script src="../libs/jquery-4.0.0.min.js"></script>
+	<link rel="stylesheet" href="../libs/jquery-ui.css">
+	<script src="../libs/jquery-ui.min.js"></script>
+	<script src="../libs/bootstrap.min.js"></script>
+	<script src="../libs/sweetalert2@11.js"></script>
+	<script src="../js/layout.js"></script>
+
+	<script>
+
+	</script>
+</body>
+
+</html>
