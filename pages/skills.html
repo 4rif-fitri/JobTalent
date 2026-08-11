@@ -126,7 +126,8 @@
 						<h3 class="fw-bold">Languages</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal"
+							data-bs-target="#addSkillModal">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -136,7 +137,8 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
+							data-bs-target="#updateSkillModal">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -149,7 +151,8 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal" data-bs-target="#addSkillModal">
+						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
+							data-bs-target="#updateSkillModal">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -164,11 +167,11 @@
 		<div class="modal fade" id="addSkillModal" data-bs-backdrop="static" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
 				<div class="modal-content">
-
-					<form id="skillForm" action="#" method="POST">
-
+					<form id="addSkillForm" action="#" method="POST">
 						<div class="modal-header">
 							<h1 class="h3 modal-title fs-5">Add Skill</h1>
+							<button type="reset" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
 						</div>
 
 						<div class="modal-body">
@@ -196,8 +199,51 @@
 						</div>
 
 						<div class="modal-footer">
-							<button type="button" class="btn btn-danger" id="btnCancelEditSkill"
-								data-bs-dismiss="modal">Cancel</button>
+							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="updateSkillModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+				<div class="modal-content">
+
+					<form id="updateSkillForm" action="#" method="POST">
+
+						<div class="modal-header">
+							<h1 class="h3 modal-title fs-5">Add Skill</h1>
+							<button type="reset" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+
+						<div class="modal-body">
+							<div class="input-group mb-3">
+								<select class="form-select" id="skillSelect" name="skill" required>
+									<option selected disabled value="">Select Skill</option>
+									<option value="PHP">PHP</option>
+									<option value="Laravel">Laravel</option>
+									<option value="JavaScript">JavaScript</option>
+									<option value="Vue">Vue.js</option>
+									<option value="React">React</option>
+									<option value="MySQL">MySQL</option>
+									<option value="HTML_CSS">HTML & CSS</option>
+								</select>
+							</div>
+							<div class="input-group mb-3">
+								<select class="form-select" id="proficiencySelect" name="proficiency" required>
+									<option selected disabled value="">Select Proficiency</option>
+									<option value="Beginner">Beginner</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Advanced">Advanced</option>
+									<option value="Expert">Expert</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn btn-danger">Delete</button>
 							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
 						</div>
 

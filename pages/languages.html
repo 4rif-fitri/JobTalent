@@ -126,7 +126,8 @@
 						<h3 class="fw-bold">Languages</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon">
+						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal"
+							data-bs-target="#addLanguagesModal">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -136,7 +137,8 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
+							data-bs-target="#updateLanguagesModal">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -149,7 +151,8 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
+							data-bs-target="#updateLanguagesModal">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -165,45 +168,86 @@
 		<div class="modal fade" id="addLanguagesModal" data-bs-backdrop="static" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
 				<div class="modal-content">
-					<div class="modal-header">
-						<h1 class="h3 modal-title fs-5">Add Languages</h1>
-					</div>
-		
-					<div class="modal-body">
-		
-						<div class="input-group mb-3">
-							<select class="form-select" id="languageSelect" name="language">
-								<option selected disabled value="">Select Language</option>
-								<option value="1">Malay</option>
-								<option value="2">English</option>
-								<option value="3">Mandarin</option>
-								<option value="4">Tamil</option>
-								<option value="5">Arabic</option>
-								<option value="6">Japanese</option>
-							</select>
+					<form id="addLanguageForm" action="#" method="POST">
+						<div class="modal-header">
+							<h1 class="h3 modal-title fs-5">Add Languages</h1>
+							<button type="reset" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
 						</div>
-						<div class="input-group mb-3">
-							<select class="form-select" id="proficiencySelect" name="proficiency">
-								<option selected disabled value="">Select Proficiency</option>
-								<option value="Native">Native</option>
-								<option value="Fluent">Fluent</option>
-								<option value="Intermediate">Intermediate</option>
-								<option value="Basic">Basic</option>
-							</select>
+						<div class="modal-body">
+							<div class="input-group mb-3">
+								<select class="form-select" id="languageSelect" name="language" required>
+									<option selected disabled value="">Select Language</option>
+									<option value="1">Malay</option>
+									<option value="2">English</option>
+									<option value="3">Mandarin</option>
+									<option value="4">Tamil</option>
+									<option value="5">Arabic</option>
+									<option value="6">Japanese</option>
+								</select>
+							</div>
+							<div class="input-group mb-3">
+								<select class="form-select" id="proficiencySelect" name="proficiency" required>
+									<option selected disabled value="">Select Proficiency</option>
+									<option value="Native">Native</option>
+									<option value="Fluent">Fluent</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Basic">Basic</option>
+								</select>
+							</div>
+
 						</div>
-		
-					</div>
-		
-					<div class="modal-footer">
-						<button type="button" class="btn btn-danger" id="btnCencelEditIntro"
-							data-bs-dismiss="modal">Cencel</button>
-						<button type="button" class="btn btn-primary">Save</button>
-					</div>
+
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 
+		<div class="modal fade" id="updateLanguagesModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+				<div class="modal-content">
+					<form id="updateLanguageForm" action="#" method="POST">
+						<div class="modal-header">
+							<h1 class="h3 modal-title fs-5">Update Languages</h1>
+							<button type="reset" class="btn-close" data-bs-dismiss="modal"
+								aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
 
+							<div class="input-group mb-3">
+								<select class="form-select" id="languageSelect" name="language" required>
+									<option selected disabled value="">Select Language</option>
+									<option value="1">Malay</option>
+									<option value="2">English</option>
+									<option value="3">Mandarin</option>
+									<option value="4">Tamil</option>
+									<option value="5">Arabic</option>
+									<option value="6">Japanese</option>
+								</select>
+							</div>
+							<div class="input-group mb-3">
+								<select class="form-select" id="proficiencySelect" name="proficiency" required>
+									<option selected disabled value="">Select Proficiency</option>
+									<option value="Native">Native</option>
+									<option value="Fluent">Fluent</option>
+									<option value="Intermediate">Intermediate</option>
+									<option value="Basic">Basic</option>
+								</select>
+							</div>
+
+						</div>
+
+						<div class="modal-footer d-flex justify-content-between">
+							<button type="button" class="btn btn-danger">Delete</button>
+							<button type="submit" class="btn btn-primary">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 
 	</main>
 
