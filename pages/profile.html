@@ -113,7 +113,7 @@
 		<div class="user-card">
 			<div class="user-card-left">
 
-				<div class="user-card-header">
+				<section class="user-card-header">
 					<div class="user-card-banner" style="background-image: url('../images/cover-image.png');">
 						<div class="icon-container">
 							<label for="cover_photo" type="button" class="btn icon bg-body">
@@ -197,7 +197,7 @@
 							<li class="nav-item">Result Sem</li>
 						</ul>
 					</nav>
-				</div>
+				</section>
 
 				<section id="about">
 					<h3 class="fw-bold text-sm-center text-lg-start">About</h3>
@@ -226,12 +226,12 @@
 					<hr>
 
 					<article class="gap-2">
-						<div>
+						<div class="d-flex gap-1 align-items-center">
 							<img src="../images/utemjpg.jpg" alt=""
 								style="width: 50px !important; border-radius: 50%;">
+							<p class="h5 fw-bold">Universiti Teknikal Malaysia Melaka (UTeM)</p>
 						</div>
 						<div class="col d-flex flex-column mx-1 gap-1">
-							<p class="h5 fw-bold">Universiti Teknikal Malaysia Melaka (UTeM)</p>
 							<p>Bachelor of Computer Science (Software Engineering)</p>
 							<p>Oct 2026 - Oct 2027</p>
 							<p>Grade: 4.00</p>
@@ -277,7 +277,7 @@
 
 					<hr>
 
-					<a href="" class="d-flex justify-content-center align-items-center">
+					<a href="./education.html" class="d-flex justify-content-center align-items-center">
 						<hp>Show All</hp>
 					</a>
 
@@ -351,12 +351,12 @@
 					<hr>
 
 					<article class="m-1">
-						<div>
+						<div class="d-flex gap-1 align-items-center">
 							<img src="../images/utemjpg.jpg" alt=""
 								style="width: 50px !important; border-radius: 50%;">
+							<p class="h5 fw-bold">Web Developer Intern</p>
 						</div>
 						<div class="col d-flex flex-column mx-1">
-							<p class="h5 fw-bold">Web Developer Intern</p>
 							<div href="">Wahdah Technology - Internship</div>
 							<p>Jul 2026 - Present</p>
 							<p>Durian Tunggal, Melaka, Malaysia</p>
@@ -396,7 +396,7 @@
 					</article>
 					<hr>
 
-					<a href="" class="d-flex justify-content-center align-items-center">
+					<a href="./experience.html" class="d-flex justify-content-center align-items-center">
 						<p>Show All</p>
 					</a>
 
@@ -457,7 +457,7 @@
 					</article>
 					<hr>
 
-					<a href="" class="d-flex justify-content-center align-items-center">
+					<a href="./honors&awards.html" class="d-flex justify-content-center align-items-center">
 						<hp>Show All</hp>
 					</a>
 
@@ -517,7 +517,7 @@
 					</div>
 
 					<hr>
-					<a href="" class="d-flex justify-content-center align-items-center">
+					<a href="./certifications.html" class="d-flex justify-content-center align-items-center">
 						<hp>Show All</hp>
 					</a>
 
@@ -546,6 +546,11 @@
 						<p class="fw-bold">English</p>
 						<p>Professional working proficiency</=>
 					</article>
+
+					<hr>
+					<a href="./languages.html" class="d-flex justify-content-center align-items-center">
+						<hp>Show All</hp>
+					</a>
 				</section>
 
 				<section id="skills" class="d-flex flex-column gap-1">
@@ -567,6 +572,11 @@
 						<p class="fw-bold">HTML</p>
 						<p>Advanced</p>
 					</article>
+
+					<hr>
+					<a href="./skills.html" class="d-flex justify-content-center align-items-center">
+						<hp>Show All</hp>
+					</a>
 				</section>
 
 			</div>
@@ -590,16 +600,16 @@
 						<div id="collapseOne" class="accordion-collapse collapse show"
 							data-bs-parent="#accordionExample">
 							<div class="list-group">
-								<button type="button"
-									class="list-group-item list-group-item-action">Education</button>
-								<button type="button"
-									class="list-group-item list-group-item-action">Project</button>
-								<button type="button"
-									class="list-group-item list-group-item-action">Experience</button>
-								<button type="button" class="list-group-item list-group-item-action">Honors &
-									Awards</button>
-								<button type="button"
-									class="list-group-item list-group-item-action">Certifications</button>
+								<a href="./education.html"
+									class="list-group-item list-group-item-action">Education</a>
+								<a href="./project.html"
+									class="list-group-item list-group-item-action">Project</a>
+								<a href="./experience.html"
+									class="list-group-item list-group-item-action">Experience</a>
+								<a href="./honors&awards.html"
+									class="list-group-item list-group-item-action">Honors & Awards</a>
+								<a href="./certifications.html"
+									class="list-group-item list-group-item-action">Certifications</a>
 							</div>
 						</div>
 					</div>
@@ -614,12 +624,11 @@
 						<div id="collapseTwo" class="accordion-collapse collapse"
 							data-bs-parent="#accordionExample">
 							<div class="list-group">
-								<button type="button"
-									class="list-group-item list-group-item-action">Languages</button>
-								<button type="button"
-									class="list-group-item list-group-item-action">Skills</button>
-								<button type="button"
-									class="list-group-item list-group-item-action">Services</button>
+								<a href="./languages.html"
+									class="list-group-item list-group-item-action">Languages</a>
+								<a href="./skills.html"
+									class="list-group-item list-group-item-action">Skills</a>
+								<a href="" class="list-group-item list-group-item-action">Services</a>
 							</div>
 						</div>
 					</div>
@@ -927,21 +936,7 @@
 					name: $("#nameInput").val(),
 					location: $("#cityInput").val() + ", " + $("#stateInput").val() + ", " + $("#countryInput").val(),
 					headline: $("#headlineInput").val(),
-					social_media: []
 				};
-
-				// get data social media links
-				$("#socialMediaInputs .social-group").each(function () {
-					let selectedPlatform = $(this).find("select[name='social_platform[]']").val();
-					let inputtedUrl = $(this).find("input[name='social_url[]']").val();
-
-					if (selectedPlatform && inputtedUrl) {
-						requestData.social_media.push({
-							platform: selectedPlatform,
-							url: inputtedUrl
-						});
-					}
-				});
 
 				console.log(requestData)
 
