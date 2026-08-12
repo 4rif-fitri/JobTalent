@@ -126,7 +126,7 @@
 						<h3 class="fw-bold">Project</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon">
+						<button type="button" class="btn bg-primary icon" onclick="openAddProject()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -137,7 +137,7 @@
 				<article class="m-1 d-flex flex-column gap-2 position-relative">
 
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" onclick="editProject(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -184,54 +184,7 @@
 				<article class="m-1 d-flex flex-column gap-2 position-relative">
 
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
-					</div>
-
-					<p class="h5 fw-bold">EduMaths – Complements to 10 Learning Platform</p>
-					<p>Jul 2026 - Aug 2026 (Part-time)</p>
-
-					<p>Designed an interactive mathematics learning platform for primary school
-						pupils.</p>
-
-					<div class="skills d-flex flex-wrap align-items-center">
-						Skills:
-						<div class="badge text-bg-secondary m-1">
-							<span>Software Engineering</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>System Analysis</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Database Design</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Web Development</span>
-						</div>
-					</div>
-
-					<div class="images d-flex flex-wrap">
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
-						</div>
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
-						</div>
-						<div class="image rounded-1 m-1 d-flex justify-content-center align-items-center"
-							style="background-image: url('../images/cover-image.png'); filter: brightness(0.5);">
-							<h4 class="text-white">+5</h4>
-						</div>
-					</div>
-
-				</article>
-
-				<hr>
-
-				<article class="m-1 d-flex flex-column gap-2 position-relative">
-
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" onclick="editProject(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -274,6 +227,247 @@
 				</article>
 			</div>
 		</div>
+
+<!-- ADD / EDIT PROJECT MODAL -->
+<div class="modal fade" id="projectModal" data-bs-backdrop="static" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+
+		<div class="modal-content h-75">
+
+			<!-- HEADER -->
+			<div class="modal-header">
+
+				<h5 class="modal-title">
+					Add Project
+				</h5>
+
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+			</div>
+
+
+			<!-- BODY -->
+			<div class="modal-body">
+
+				<!-- TITLE -->
+				<div class="mb-3">
+
+					<label for="projectTitle" class="form-label">
+						Title
+					</label>
+
+					<input type="text" class="form-control" id="projectTitle"
+						placeholder="e.g. EduMaths Learning Platform" required>
+
+				</div>
+
+
+				<!-- DESCRIPTION -->
+				<div class="mb-3">
+
+					<label for="projectDescription" class="form-label">
+						Description
+					</label>
+
+					<textarea class="form-control" id="projectDescription" rows="4"
+						placeholder="Describe your project"></textarea>
+
+				</div>
+
+
+				<!-- PROJECT TYPE -->
+				<div class="mb-3">
+
+					<label for="projectType" class="form-label">
+						Project Type
+					</label>
+
+					<select class="form-select" id="projectType" required>
+
+						<option value="" selected disabled>
+							Select Project Type
+						</option>
+
+						<option value="personal">
+							Personal
+						</option>
+
+						<option value="academic">
+							Academic
+						</option>
+
+						<option value="freelance">
+							Freelance
+						</option>
+
+						<option value="work">
+							Work
+						</option>
+
+						<option value="competition">
+							Competition
+						</option>
+
+					</select>
+
+				</div>
+
+
+				<!-- DATE -->
+				<div class="row g-3 mb-4">
+
+					<div class="col-md-6">
+
+						<label for="projectStartDate" class="form-label">
+							Start Date
+						</label>
+
+						<input type="date" class="form-control" id="projectStartDate">
+
+					</div>
+
+
+					<div class="col-md-6">
+
+						<label for="projectEndDate" class="form-label">
+							End Date
+						</label>
+
+						<input type="date" class="form-control" id="projectEndDate">
+
+					</div>
+
+				</div>
+
+
+				<!-- SKILLS -->
+				<div class="mb-4">
+
+					<label class="form-label">
+						Skills
+					</label>
+
+					<div>
+
+						<button type="button" id="addProjectSkill" class="btn btn-outline-primary btn-sm">
+							+ Add Skill
+						</button>
+
+						<div id="projectSkillContainer" class="mt-3"></div>
+
+					</div>
+
+				</div>
+
+
+				<!-- MEDIA -->
+				<div class="mb-3">
+
+					<label class="form-label fw-semibold">
+						Media
+					</label>
+
+					<p class="text-muted small mb-2">
+						Add images related to your project.
+					</p>
+
+					<input type="file" id="projectMediaInput" accept="image/*" hidden>
+
+					<button type="button" id="addProjectMedia" class="btn btn-outline-primary btn-sm">
+						+ Add Media
+					</button>
+
+					<div id="projectMediaContainer" class="d-flex flex-wrap gap-2 mt-3"></div>
+
+				</div>
+
+			</div>
+
+
+			<!-- FOOTER -->
+			<div class="modal-footer">
+
+				<button type="button" class="btn btn-primary" id="btnSaveProject">
+					Save
+				</button>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+		<div class="modal fade" id="projectMediaModal" data-bs-backdrop="static" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<h5 class="modal-title">
+							Edit media
+						</h5>
+
+						<button type="button" class="btn-close" id="closeProjectMedia"></button>
+
+					</div>
+
+
+					<div class="modal-body">
+
+						<div class="mb-3">
+
+							<label class="form-label">
+								Title
+							</label>
+
+							<input type="text" id="projectMediaTitle" class="form-control">
+
+						</div>
+
+
+						<div class="mb-3">
+
+							<label class="form-label">
+								Description
+							</label>
+
+							<textarea id="projectMediaDescription" class="form-control" rows="4"></textarea>
+
+						</div>
+
+
+						<div id="projectMediaPreview"></div>
+
+					</div>
+
+
+					<div class="modal-footer justify-content-between">
+
+						<button type="button" id="deleteProjectMedia"
+							class="btn btn-link text-danger text-decoration-none d-none">
+							Delete
+						</button>
+
+						<div>
+
+							<button type="button" id="backProjectMedia" class="btn btn-outline-secondary">
+								Back
+							</button>
+
+							<button type="button" id="saveProjectMedia" class="btn btn-primary">
+								Save
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
 	</main>
 
 	<script src="../libs/jquery-4.0.0.min.js"></script>
@@ -284,7 +478,1204 @@
 	<script src="../js/layout.js"></script>
 
 	<script>
+		/*
+		|--------------------------------------------------------------------------
+		| PROJECT STATE
+		|--------------------------------------------------------------------------
+		*/
 
+		let projectMode = "add";
+		let editingProjectId = null;
+
+		let projectMediaList = [];
+		let deletedProjectMediaIds = [];
+
+		let selectedProjectImage = null;
+		let editingProjectMediaIndex = null;
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ELEMENTS
+		|--------------------------------------------------------------------------
+		*/
+
+		const projectModalEl =
+			document.getElementById("projectModal");
+
+		const projectModal =
+			bootstrap.Modal.getOrCreateInstance(
+				projectModalEl
+			);
+
+		const projectMediaModalEl =
+			document.getElementById(
+				"projectMediaModal"
+			);
+
+		const projectMediaModal =
+			bootstrap.Modal.getOrCreateInstance(
+				projectMediaModalEl
+			);
+
+
+		const projectSkillContainer =
+			document.getElementById(
+				"projectSkillContainer"
+			);
+
+		const addProjectSkillBtn =
+			document.getElementById(
+				"addProjectSkill"
+			);
+
+
+		const projectMediaInput =
+			document.getElementById(
+				"projectMediaInput"
+			);
+
+		const addProjectMediaBtn =
+			document.getElementById(
+				"addProjectMedia"
+			);
+
+		const projectMediaContainer =
+			document.getElementById(
+				"projectMediaContainer"
+			);
+
+		const projectMediaTitle =
+			document.getElementById(
+				"projectMediaTitle"
+			);
+
+		const projectMediaDescription =
+			document.getElementById(
+				"projectMediaDescription"
+			);
+
+		const projectMediaPreview =
+			document.getElementById(
+				"projectMediaPreview"
+			);
+
+		const saveProjectMediaBtn =
+			document.getElementById(
+				"saveProjectMedia"
+			);
+
+		const deleteProjectMediaBtn =
+			document.getElementById(
+				"deleteProjectMedia"
+			);
+
+		const backProjectMediaBtn =
+			document.getElementById(
+				"backProjectMedia"
+			);
+
+		const closeProjectMediaBtn =
+			document.getElementById(
+				"closeProjectMedia"
+			);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| PROJECT SKILL
+		|--------------------------------------------------------------------------
+		*/
+
+		function createProjectSkillRow(
+			skill = "",
+			proficiency = ""
+		) {
+
+			const row =
+				document.createElement("div");
+
+			row.className =
+				"project-skill-row mb-2";
+
+			row.innerHTML = `
+		<div class="input-group">
+
+			<select
+				class="form-select project-skill"
+			>
+
+				<option
+					value=""
+					disabled
+					${skill === "" ? "selected" : ""}
+				>
+					Select Skill
+				</option>
+
+				<option
+					value="PHP"
+					${skill === "PHP" ? "selected" : ""}
+				>
+					PHP
+				</option>
+
+				<option
+					value="Laravel"
+					${skill === "Laravel" ? "selected" : ""}
+				>
+					Laravel
+				</option>
+
+				<option
+					value="JavaScript"
+					${skill === "JavaScript" ? "selected" : ""}
+				>
+					JavaScript
+				</option>
+
+				<option
+					value="Vue"
+					${skill === "Vue" ? "selected" : ""}
+				>
+					Vue.js
+				</option>
+
+				<option
+					value="React"
+					${skill === "React" ? "selected" : ""}
+				>
+					React
+				</option>
+
+				<option
+					value="MySQL"
+					${skill === "MySQL" ? "selected" : ""}
+				>
+					MySQL
+				</option>
+
+			</select>
+
+
+			<select
+				class="form-select project-proficiency"
+			>
+
+				<option
+					value=""
+					disabled
+					${proficiency === "" ? "selected" : ""}
+				>
+					Select Proficiency
+				</option>
+
+				<option
+					value="Beginner"
+					${proficiency === "Beginner" ? "selected" : ""}
+				>
+					Beginner
+				</option>
+
+				<option
+					value="Intermediate"
+					${proficiency === "Intermediate" ? "selected" : ""}
+				>
+					Intermediate
+				</option>
+
+				<option
+					value="Advanced"
+					${proficiency === "Advanced" ? "selected" : ""}
+				>
+					Advanced
+				</option>
+
+				<option
+					value="Expert"
+					${proficiency === "Expert" ? "selected" : ""}
+				>
+					Expert
+				</option>
+
+			</select>
+
+
+			<button
+				type="button"
+				class="
+					btn
+					btn-outline-danger
+					remove-project-skill
+				"
+			>
+				<i class="fa-solid fa-trash"></i>
+			</button>
+
+		</div>
+	`;
+
+			return row;
+		}
+
+
+		addProjectSkillBtn.addEventListener(
+			"click",
+			function () {
+
+				projectSkillContainer.appendChild(
+					createProjectSkillRow()
+				);
+
+			}
+		);
+
+
+		projectSkillContainer.addEventListener(
+			"click",
+			function (event) {
+
+				const btn =
+					event.target.closest(
+						".remove-project-skill"
+					);
+
+				if (!btn) {
+					return;
+				}
+
+				btn.closest(
+					".project-skill-row"
+				).remove();
+
+			}
+		);
+
+
+		function renderProjectSkills(
+			skills = []
+		) {
+
+			projectSkillContainer.innerHTML =
+				"";
+
+			skills.forEach(
+				function (skill) {
+
+					projectSkillContainer.appendChild(
+						createProjectSkillRow(
+							skill.skill,
+							skill.proficiency
+						)
+					);
+
+				}
+			);
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ADD PROJECT MEDIA
+		|--------------------------------------------------------------------------
+		*/
+
+		addProjectMediaBtn.addEventListener(
+			"click",
+			function () {
+
+				editingProjectMediaIndex =
+					null;
+
+				selectedProjectImage =
+					null;
+
+				deleteProjectMediaBtn
+					.classList
+					.add("d-none");
+
+				projectMediaInput.value =
+					"";
+
+				projectMediaInput.click();
+
+			}
+		);
+
+
+		projectMediaInput.addEventListener(
+			"change",
+			function () {
+
+				const file =
+					this.files[0];
+
+				if (!file) {
+					return;
+				}
+
+
+				if (!file.type.startsWith("image/")) {
+
+					alert(
+						"Please select an image."
+					);
+
+					return;
+				}
+
+
+				const maxSize =
+					5 * 1024 * 1024;
+
+				if (file.size > maxSize) {
+
+					alert(
+						"Image must be less than 5MB."
+					);
+
+					return;
+				}
+
+
+				selectedProjectImage =
+					file;
+
+				editingProjectMediaIndex =
+					null;
+
+
+				projectMediaTitle.value =
+					file.name.replace(
+						/\.[^/.]+$/,
+						""
+					);
+
+				projectMediaDescription.value =
+					"";
+
+
+				showProjectImagePreview(
+					file
+				);
+
+
+				projectModalEl.addEventListener(
+					"hidden.bs.modal",
+					function () {
+
+						projectMediaModal.show();
+
+					},
+					{
+						once: true
+					}
+				);
+
+				projectModal.hide();
+
+			}
+		);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| PROJECT MEDIA PREVIEW
+		|--------------------------------------------------------------------------
+		*/
+
+		function showProjectImagePreview(
+			file
+		) {
+
+			const url =
+				URL.createObjectURL(file);
+
+			projectMediaPreview.innerHTML = `
+		<img
+			src="${url}"
+			class="rounded border"
+			style="
+				width: 120px;
+				height: 90px;
+				object-fit: cover;
+			"
+		>
+	`;
+
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| SAVE PROJECT MEDIA
+		|--------------------------------------------------------------------------
+		*/
+
+		saveProjectMediaBtn.addEventListener(
+			"click",
+			function () {
+
+				const title =
+					projectMediaTitle.value.trim();
+
+				const description =
+					projectMediaDescription.value.trim();
+
+
+				if (!title) {
+
+					alert(
+						"Title is required."
+					);
+
+					return;
+				}
+
+
+				if (
+					editingProjectMediaIndex ===
+					null
+				) {
+
+					if (!selectedProjectImage) {
+						return;
+					}
+
+
+					projectMediaList.push({
+
+						id:
+							null,
+
+						file:
+							selectedProjectImage,
+
+						title:
+							title,
+
+						description:
+							description,
+
+						preview:
+							URL.createObjectURL(
+								selectedProjectImage
+							)
+
+					});
+
+				} else {
+
+					projectMediaList[
+						editingProjectMediaIndex
+					].title =
+						title;
+
+					projectMediaList[
+						editingProjectMediaIndex
+					].description =
+						description;
+
+				}
+
+
+				renderProjectMedia();
+
+				resetProjectMediaForm();
+
+				backToProject();
+
+			}
+		);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| RENDER PROJECT MEDIA
+		|--------------------------------------------------------------------------
+		*/
+
+		function renderProjectMedia() {
+
+			projectMediaContainer.innerHTML =
+				"";
+
+
+			projectMediaList.forEach(
+				function (media, index) {
+
+					const item =
+						document.createElement(
+							"div"
+						);
+
+					item.innerHTML = `
+				<div
+					class="position-relative"
+					style="
+						width:100px;
+						height:75px;
+					"
+				>
+
+					<img
+						src="${media.preview}"
+						class="rounded border"
+						style="
+							width:100%;
+							height:100%;
+							object-fit:cover;
+						"
+					>
+
+					<button
+						type="button"
+						class="
+							btn
+							btn-light
+							btn-sm
+							rounded-circle
+							position-absolute
+							bottom-0
+							end-0
+						"
+						onclick="
+							editProjectMedia(${index})
+						"
+					>
+						<i class="fa-solid fa-pen"></i>
+					</button>
+
+				</div>
+
+				<small>
+					${media.title}
+				</small>
+			`;
+
+
+					projectMediaContainer.appendChild(
+						item
+					);
+
+				}
+			);
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| EDIT PROJECT MEDIA
+		|--------------------------------------------------------------------------
+		*/
+
+		function editProjectMedia(index) {
+
+			if (!projectMediaList[index]) {
+				return;
+			}
+
+
+			editingProjectMediaIndex =
+				index;
+
+
+			const media =
+				projectMediaList[index];
+
+
+			selectedProjectImage =
+				media.file ?? null;
+
+
+			projectMediaTitle.value =
+				media.title;
+
+			projectMediaDescription.value =
+				media.description ?? "";
+
+
+			projectMediaPreview.innerHTML = `
+		<img
+			src="${media.preview}"
+			class="rounded border"
+			style="
+				width:120px;
+				height:90px;
+				object-fit:cover;
+			"
+		>
+	`;
+
+
+			deleteProjectMediaBtn
+				.classList
+				.remove("d-none");
+
+
+			projectModalEl.addEventListener(
+				"hidden.bs.modal",
+				function () {
+
+					projectMediaModal.show();
+
+				},
+				{
+					once: true
+				}
+			);
+
+
+			projectModal.hide();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| DELETE PROJECT MEDIA
+		|--------------------------------------------------------------------------
+		*/
+
+		deleteProjectMediaBtn.addEventListener(
+			"click",
+			function () {
+
+				if (
+					editingProjectMediaIndex ===
+					null
+				) {
+					return;
+				}
+
+
+				const media =
+					projectMediaList[
+					editingProjectMediaIndex
+					];
+
+
+				if (media.id) {
+
+					deletedProjectMediaIds.push(
+						media.id
+					);
+
+				}
+
+
+				if (
+					media.preview &&
+					media.preview.startsWith(
+						"blob:"
+					)
+				) {
+
+					URL.revokeObjectURL(
+						media.preview
+					);
+
+				}
+
+
+				projectMediaList.splice(
+					editingProjectMediaIndex,
+					1
+				);
+
+
+				renderProjectMedia();
+
+				resetProjectMediaForm();
+
+				backToProject();
+
+			}
+		);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| PROJECT MEDIA BACK
+		|--------------------------------------------------------------------------
+		*/
+
+		function backToProject() {
+
+			projectMediaModalEl.addEventListener(
+				"hidden.bs.modal",
+				function () {
+
+					projectModal.show();
+
+				},
+				{
+					once: true
+				}
+			);
+
+			projectMediaModal.hide();
+		}
+
+
+		backProjectMediaBtn.addEventListener(
+			"click",
+			function () {
+
+				resetProjectMediaForm();
+
+				backToProject();
+
+			}
+		);
+
+
+		closeProjectMediaBtn.addEventListener(
+			"click",
+			function () {
+
+				resetProjectMediaForm();
+
+				backToProject();
+
+			}
+		);
+
+
+		function resetProjectMediaForm() {
+
+			selectedProjectImage =
+				null;
+
+			editingProjectMediaIndex =
+				null;
+
+			projectMediaInput.value =
+				"";
+
+			projectMediaTitle.value =
+				"";
+
+			projectMediaDescription.value =
+				"";
+
+			projectMediaPreview.innerHTML =
+				"";
+
+			deleteProjectMediaBtn
+				.classList
+				.add("d-none");
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ADD PROJECT
+		|--------------------------------------------------------------------------
+		*/
+
+		function openAddProject() {
+
+			projectMode =
+				"add";
+
+			editingProjectId =
+				null;
+
+			deletedProjectMediaIds =
+				[];
+
+
+			document.querySelector(
+				"#projectModal .modal-title"
+			).textContent =
+				"Add Project";
+
+
+			document.getElementById(
+				"btnSaveProject"
+			).textContent =
+				"Save";
+
+
+			$("#projectTitle").val("");
+
+			$("#projectDescription").val("");
+
+			$("#projectType").val("");
+
+			$("#projectStartDate").val("");
+
+			$("#projectEndDate").val("");
+
+
+			projectSkillContainer.innerHTML =
+				"";
+
+
+			projectMediaList =
+				[];
+
+			renderProjectMedia();
+
+
+			projectModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| EDIT PROJECT
+		|--------------------------------------------------------------------------
+		*/
+
+		function editProject(id) {
+
+			projectMode =
+				"edit";
+
+			editingProjectId =
+				id;
+
+			deletedProjectMediaIds =
+				[];
+
+
+			const data = {
+
+				id:
+					id,
+
+				title:
+					"EduMaths – Complements to 10 Learning Platform",
+
+				description:
+					"Designed an interactive mathematics learning platform for primary school pupils.",
+
+				project_type:
+					"academic",
+
+				date_start:
+					"2026-07-01",
+
+				date_end:
+					"2026-08-31",
+
+				skills: [
+
+					{
+						skill:
+							"JavaScript",
+
+						proficiency:
+							"Advanced"
+					},
+
+					{
+						skill:
+							"PHP",
+
+						proficiency:
+							"Intermediate"
+					}
+
+				],
+
+				media: [
+
+					{
+						id:
+							1,
+
+						file:
+							null,
+
+						title:
+							"EduMath Screenshot",
+
+						description:
+							"Project screenshot",
+
+						preview:
+							"../images/cover-image.png"
+					}
+
+				]
+
+			};
+
+
+			document.querySelector(
+				"#projectModal .modal-title"
+			).textContent =
+				"Edit Project";
+
+
+			document.getElementById(
+				"btnSaveProject"
+			).textContent =
+				"Update";
+
+
+			$("#projectTitle").val(
+				data.title
+			);
+
+			$("#projectDescription").val(
+				data.description
+			);
+
+			$("#projectType").val(
+				data.project_type
+			);
+
+			$("#projectStartDate").val(
+				data.date_start
+			);
+
+			$("#projectEndDate").val(
+				data.date_end
+			);
+
+
+			renderProjectSkills(
+				data.skills ?? []
+			);
+
+
+			projectMediaList =
+				data.media ?? [];
+
+
+			renderProjectMedia();
+
+
+			projectModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| SAVE PROJECT AJAX
+		|--------------------------------------------------------------------------
+		*/
+
+		document
+			.getElementById(
+				"btnSaveProject"
+			)
+			.addEventListener(
+				"click",
+				function () {
+
+					const formData =
+						new FormData();
+
+
+					formData.append(
+						"title",
+						$("#projectTitle").val()
+					);
+
+					formData.append(
+						"description",
+						$("#projectDescription").val()
+					);
+
+					formData.append(
+						"project_type",
+						$("#projectType").val()
+					);
+
+					formData.append(
+						"date_start",
+						$("#projectStartDate").val()
+					);
+
+					formData.append(
+						"date_end",
+						$("#projectEndDate").val()
+					);
+
+
+					/*
+					|--------------------------------------------------------------------------
+					| SKILLS
+					|--------------------------------------------------------------------------
+					*/
+
+					document.querySelectorAll(
+						".project-skill-row"
+					).forEach(
+						function (row, index) {
+
+							formData.append(
+								`skills[${index}][skill]`,
+								row.querySelector(
+									".project-skill"
+								).value
+							);
+
+							formData.append(
+								`skills[${index}][proficiency]`,
+								row.querySelector(
+									".project-proficiency"
+								).value
+							);
+
+						}
+					);
+
+
+					/*
+					|--------------------------------------------------------------------------
+					| MEDIA
+					|--------------------------------------------------------------------------
+					*/
+
+					projectMediaList.forEach(
+						function (media, index) {
+
+							if (media.id) {
+
+								formData.append(
+									`media[${index}][id]`,
+									media.id
+								);
+
+							}
+
+
+							if (media.file) {
+
+								formData.append(
+									`media[${index}][file]`,
+									media.file
+								);
+
+							}
+
+
+							formData.append(
+								`media[${index}][title]`,
+								media.title
+							);
+
+							formData.append(
+								`media[${index}][description]`,
+								media.description ?? ""
+							);
+
+						}
+					);
+
+
+					deletedProjectMediaIds.forEach(
+						function (id, index) {
+
+							formData.append(
+								`deleted_media_ids[${index}]`,
+								id
+							);
+
+						}
+					);
+
+
+					/*
+					|--------------------------------------------------------------------------
+					| ADD / EDIT
+					|--------------------------------------------------------------------------
+					*/
+
+					let url;
+
+
+					if (
+						projectMode === "add"
+					) {
+
+						url =
+							"/project";
+
+					} else {
+
+						url =
+							`/project/${editingProjectId}`;
+
+						formData.append(
+							"_method",
+							"PUT"
+						);
+
+					}
+
+
+					/*
+					|--------------------------------------------------------------------------
+					| DEBUG
+					|--------------------------------------------------------------------------
+					*/
+
+					for (
+						const [key, value]
+						of formData.entries()
+					) {
+
+						console.log(
+							key,
+							value
+						);
+
+					}
+
+
+					/*
+					|--------------------------------------------------------------------------
+					| AJAX
+					|--------------------------------------------------------------------------
+					*/
+
+					$.ajax({
+
+						url:
+							url,
+
+						type:
+							"POST",
+
+						data:
+							formData,
+
+						processData:
+							false,
+
+						contentType:
+							false,
+
+						success:
+							function (response) {
+
+								console.log(
+									response
+								);
+
+								projectModal.hide();
+
+							},
+
+						error:
+							function (xhr) {
+
+								console.log(
+									xhr.responseJSON
+								);
+
+							}
+
+					});
+
+				}
+			);
 	</script>
 </body>
 
