@@ -165,21 +165,10 @@
 
 		<div class="user-card">
 
-
-			<!-- =====================================================
-				LEFT
-			===================================================== -->
-
 			<div class="user-card-left">
-
-
-				<!-- =================================================
-					PROFILE HEADER
-				================================================= -->
 
 				<section class="user-card-header">
 
-					<!-- COVER -->
 					<div class="user-card-banner" style="background-image: url('../images/cover-image.png');">
 
 						<div class="icon-container">
@@ -195,7 +184,6 @@
 					</div>
 
 
-					<!-- PROFILE IMAGE -->
 					<div class="user-profile-group">
 
 						<div class="profile-image" style="background-image: url('../images/cover-image.png');">
@@ -214,8 +202,6 @@
 
 					</div>
 
-
-					<!-- PROFILE DETAIL -->
 					<div class="user-profile-detail">
 
 						<div class="icon-container" style="top:-5px;">
@@ -318,162 +304,147 @@
 
 					</div>
 
-
-					<nav class="horizontal-nav">
-
-						<ul>
-							<li class="nav-item active">
-								Main
-							</li>
-
-							<li class="nav-item">
-								Result Sem
-							</li>
-						</ul>
-
+					<nav class="horizontal-nav d-flex gap-4 px-3">
+						<button type="button" class="profile-tab active d-flex justify-content-center" data-target="main">
+							Main
+						</button>
+						<button type="button" class="profile-tab d-flex justify-content-center" data-target="result">
+							Result Sem
+						</button>
 					</nav>
 
 				</section>
+				<div id="mainTabContent">
+
+					<section id="about">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							About
+						</h3>
+
+						<hr>
 
 
-				<!-- =================================================
-					ABOUT
-				================================================= -->
-
-				<section id="about">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						About
-					</h3>
-
-					<hr>
+						<p id="aboutText">
+							Motivated computer science student with experience
+							in web development, database design and user interface
+							prototyping. Interested in building responsive and
+							user-friendly applications using Laravel, JavaScript
+							and modern frontend tools.
+						</p>
 
 
-					<p id="aboutText">
-						Motivated computer science student with experience
-						in web development, database design and user interface
-						prototyping. Interested in building responsive and
-						user-friendly applications using Laravel, JavaScript
-						and modern frontend tools.
-					</p>
+						<div class="icon-container">
+
+							<button type="button" class="icon btn btn-secondary" id="btnEditAbout">
+								<i class="fa-solid fa-pencil"></i>
+							</button>
+
+						</div>
+
+					</section>
+
+					<section id="education" class="d-flex flex-column gap-1">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							Education
+						</h3>
 
 
-					<div class="icon-container">
+						<div class="icon-container">
 
-						<button type="button" class="icon btn btn-secondary" id="btnEditAbout">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
+							<a href="./education.html" class="btn btn-secondary icon">
+								<i class="fa-solid fa-pencil"></i>
+							</a>
 
-					</div>
-
-				</section>
+						</div>
 
 
-				<!-- =================================================
-					EDUCATION
-				================================================= -->
-
-				<section id="education" class="d-flex flex-column gap-1">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						Education
-					</h3>
+						<hr>
 
 
-					<div class="icon-container">
+						<article class="gap-2">
 
-						<a href="./education.html" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
-						</a>
+							<div class="d-flex gap-1 align-items-center">
 
-					</div>
-
-
-					<hr>
-
-
-					<article class="gap-2">
-
-						<div class="d-flex gap-1 align-items-center">
-
-							<img src="../images/utemjpg.jpg" alt="UTeM" style="
+								<img src="../images/utemjpg.jpg" alt="UTeM" style="
 									width:50px;
 									height:50px;
 									border-radius:50%;
 									object-fit:cover;
 								">
 
-							<p class="h5 fw-bold">
-								Universiti Teknikal Malaysia Melaka
-								(UTeM)
-							</p>
+								<p class="h5 fw-bold">
+									Universiti Teknikal Malaysia Melaka
+									(UTeM)
+								</p>
 
-						</div>
-
-
-						<div class="col d-flex flex-column mx-1 gap-1">
-
-							<p>
-								Bachelor of Computer Science
-								(Software Engineering)
-							</p>
-
-							<p>
-								Oct 2026 - Oct 2027
-							</p>
-
-							<p>
-								Grade: 4.00
-							</p>
-
-							<p>
-								Currently pursuing a degree in software
-								engineering with emphasis on system
-							</p>
+							</div>
 
 
-							<div class="
+							<div class="col d-flex flex-column mx-1 gap-1">
+
+								<p>
+									Bachelor of Computer Science
+									(Software Engineering)
+								</p>
+
+								<p>
+									Oct 2026 - Oct 2027
+								</p>
+
+								<p>
+									Grade: 4.00
+								</p>
+
+								<p>
+									Currently pursuing a degree in software
+									engineering with emphasis on system
+								</p>
+
+
+								<div class="
 									skills
 									d-flex
 									flex-wrap
 									align-items-center
 								">
-								Skills:
+									Skills:
 
-								<div class="badge text-bg-secondary m-1">
-									Software Engineering
+									<div class="badge text-bg-secondary m-1">
+										Software Engineering
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										System Analysis
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										Database Design
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										Web Development
+									</div>
+
 								</div>
 
-								<div class="badge text-bg-secondary m-1">
-									System Analysis
-								</div>
 
-								<div class="badge text-bg-secondary m-1">
-									Database Design
-								</div>
+								<div class="images d-flex flex-wrap">
 
-								<div class="badge text-bg-secondary m-1">
-									Web Development
-								</div>
-
-							</div>
-
-
-							<div class="images d-flex flex-wrap">
-
-								<div class="image rounded-1 m-1" style="
+									<div class="image rounded-1 m-1" style="
 										background-image:url('../images/cover-image.png');
 										cursor:pointer;
 									" data-bs-toggle="modal" data-bs-target="#imagePreviewModal" data-slide-index="0"></div>
 
 
-								<div class="image rounded-1 m-1" style="
+									<div class="image rounded-1 m-1" style="
 										background-image:url('../images/cover-image.png');
 										cursor:pointer;
 									" data-bs-toggle="modal" data-bs-target="#imagePreviewModal" data-slide-index="1"></div>
 
 
-								<div class="
+									<div class="
 										image
 										rounded-1
 										m-1
@@ -485,201 +456,70 @@
 										filter:brightness(.5);
 										cursor:pointer;
 									" data-bs-toggle="modal" data-bs-target="#imagePreviewModal" data-slide-index="2">
-									<h4 class="text-white m-0">
-										+5
-									</h4>
+										<h4 class="text-white m-0">
+											+5
+										</h4>
+									</div>
+
 								</div>
 
 							</div>
 
-						</div>
-
-					</article>
+						</article>
 
 
-					<hr>
+						<hr>
 
 
-					<a href="./education.html" class="d-flex justify-content-center align-items-center">
-						<span>
-							Show All
-						</span>
-					</a>
-
-				</section>
-
-
-				<!-- =================================================
-					PROJECT
-				================================================= -->
-
-				<section id="projects" class="d-flex flex-column gap-1">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						Project
-					</h3>
-
-
-					<div class="icon-container">
-
-						<a href="./project.html" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
+						<a href="./education.html" class="d-flex justify-content-center align-items-center">
+							<span>
+								Show All
+							</span>
 						</a>
 
-					</div>
+					</section>
+
+					<section id="projects" class="d-flex flex-column gap-1">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							Project
+						</h3>
 
 
-					<hr>
+						<div class="icon-container">
+
+							<a href="./project.html" class="btn btn-secondary icon">
+								<i class="fa-solid fa-pencil"></i>
+							</a>
+
+						</div>
 
 
-					<article class="m-1 d-flex flex-column gap-2">
-
-						<p class="h5 fw-bold">
-							EduMaths – Complements to 10 Learning Platform
-						</p>
-
-						<p>
-							Jul 2026 - Aug 2026
-						</p>
-
-						<p>
-							Designed an interactive mathematics learning
-							platform for primary school pupils.
-						</p>
+						<hr>
 
 
-						<div class="
+						<article class="m-1 d-flex flex-column gap-2">
+
+							<p class="h5 fw-bold">
+								EduMaths – Complements to 10 Learning Platform
+							</p>
+
+							<p>
+								Jul 2026 - Aug 2026
+							</p>
+
+							<p>
+								Designed an interactive mathematics learning
+								platform for primary school pupils.
+							</p>
+
+
+							<div class="
 								skills
 								d-flex
 								flex-wrap
 								align-items-center
 							">
-							Skills:
-
-							<div class="badge text-bg-secondary m-1">
-								Software Engineering
-							</div>
-
-							<div class="badge text-bg-secondary m-1">
-								System Analysis
-							</div>
-
-							<div class="badge text-bg-secondary m-1">
-								Database Design
-							</div>
-
-							<div class="badge text-bg-secondary m-1">
-								Web Development
-							</div>
-
-						</div>
-
-
-						<div class="images d-flex flex-wrap">
-
-							<div class="image rounded-1 m-1"
-								style="background-image:url('../images/cover-image.png');"></div>
-
-							<div class="image rounded-1 m-1"
-								style="background-image:url('../images/cover-image.png');"></div>
-
-							<div class="
-									image
-									rounded-1
-									m-1
-									d-flex
-									justify-content-center
-									align-items-center
-								" style="
-									background-image:url('../images/cover-image.png');
-									filter:brightness(.5);
-								">
-								<h4 class="text-white m-0">
-									+5
-								</h4>
-							</div>
-
-						</div>
-
-					</article>
-
-
-					<hr>
-
-
-					<a href="./project.html" class="d-flex justify-content-center align-items-center">
-						Show All
-					</a>
-
-				</section>
-
-
-				<!-- =================================================
-					EXPERIENCE
-				================================================= -->
-
-				<section id="experience" class="d-flex flex-column gap-1">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						Experience
-					</h3>
-
-
-					<div class="icon-container">
-
-						<a href="./experience.html" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
-						</a>
-
-					</div>
-
-
-					<hr>
-
-
-					<article class="m-1">
-
-						<div class="d-flex gap-1 align-items-center">
-
-							<img src="../images/utemjpg.jpg" alt="" style="
-									width:50px;
-									height:50px;
-									border-radius:50%;
-									object-fit:cover;
-								">
-
-							<p class="h5 fw-bold">
-								Web Developer Intern
-							</p>
-
-						</div>
-
-
-						<div class="col d-flex flex-column mx-1">
-
-							<p>
-								Wahdah Technology - Internship
-							</p>
-
-							<p>
-								Jul 2026 - Present
-							</p>
-
-							<p>
-								Durian Tunggal, Melaka, Malaysia
-							</p>
-
-							<p>
-								Contributed to Laravel-based web applications
-							</p>
-
-
-							<div class="
-									skills
-									d-flex
-									flex-wrap
-									align-items-center
-								">
 								Skills:
 
 								<div class="badge text-bg-secondary m-1">
@@ -710,6 +550,127 @@
 									style="background-image:url('../images/cover-image.png');"></div>
 
 								<div class="
+									image
+									rounded-1
+									m-1
+									d-flex
+									justify-content-center
+									align-items-center
+								" style="
+									background-image:url('../images/cover-image.png');
+									filter:brightness(.5);
+								">
+									<h4 class="text-white m-0">
+										+5
+									</h4>
+								</div>
+
+							</div>
+
+						</article>
+
+
+						<hr>
+
+
+						<a href="./project.html" class="d-flex justify-content-center align-items-center">
+							Show All
+						</a>
+
+					</section>
+
+					<section id="experience" class="d-flex flex-column gap-1">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							Experience
+						</h3>
+
+
+						<div class="icon-container">
+
+							<a href="./experience.html" class="btn btn-secondary icon">
+								<i class="fa-solid fa-pencil"></i>
+							</a>
+
+						</div>
+
+
+						<hr>
+
+
+						<article class="m-1">
+
+							<div class="d-flex gap-1 align-items-center">
+
+								<img src="../images/utemjpg.jpg" alt="" style="
+									width:50px;
+									height:50px;
+									border-radius:50%;
+									object-fit:cover;
+								">
+
+								<p class="h5 fw-bold">
+									Web Developer Intern
+								</p>
+
+							</div>
+
+
+							<div class="col d-flex flex-column mx-1">
+
+								<p>
+									Wahdah Technology - Internship
+								</p>
+
+								<p>
+									Jul 2026 - Present
+								</p>
+
+								<p>
+									Durian Tunggal, Melaka, Malaysia
+								</p>
+
+								<p>
+									Contributed to Laravel-based web applications
+								</p>
+
+
+								<div class="
+									skills
+									d-flex
+									flex-wrap
+									align-items-center
+								">
+									Skills:
+
+									<div class="badge text-bg-secondary m-1">
+										Software Engineering
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										System Analysis
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										Database Design
+									</div>
+
+									<div class="badge text-bg-secondary m-1">
+										Web Development
+									</div>
+
+								</div>
+
+
+								<div class="images d-flex flex-wrap">
+
+									<div class="image rounded-1 m-1"
+										style="background-image:url('../images/cover-image.png');"></div>
+
+									<div class="image rounded-1 m-1"
+										style="background-image:url('../images/cover-image.png');"></div>
+
+									<div class="
 										image
 										rounded-1
 										m-1
@@ -720,162 +681,152 @@
 										background-image:url('../images/cover-image.png');
 										filter:brightness(.5);
 									">
-									<h4 class="text-white m-0">
-										+5
-									</h4>
+										<h4 class="text-white m-0">
+											+5
+										</h4>
+									</div>
+
 								</div>
 
 							</div>
 
-						</div>
-
-					</article>
+						</article>
 
 
-					<hr>
+						<hr>
 
 
-					<a href="./experience.html" class="d-flex justify-content-center align-items-center">
-						Show All
-					</a>
-
-				</section>
-
-
-				<!-- =================================================
-					HONORS
-				================================================= -->
-
-				<section id="honorsAwards" class="d-flex flex-column gap-1">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						Honors & Awards
-					</h3>
-
-
-					<div class="icon-container">
-
-						<a href="./honors&awards.html" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
+						<a href="./experience.html" class="d-flex justify-content-center align-items-center">
+							Show All
 						</a>
 
-					</div>
+					</section>
+
+					<section id="honorsAwards" class="d-flex flex-column gap-1">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							Honors & Awards
+						</h3>
 
 
-					<hr>
+						<div class="icon-container">
+
+							<a href="./honors&awards.html" class="btn btn-secondary icon">
+								<i class="fa-solid fa-pencil"></i>
+							</a>
+
+						</div>
 
 
-					<article class="m-1 d-flex flex-column gap-2">
-
-						<p class="h5 fw-bold">
-							Dean's List Award
-						</p>
-
-						<p>
-							Associated with Universiti Teknikal Malaysia Melaka
-						</p>
-
-						<p>
-							Issued Oct 2025
-						</p>
-
-						<p>
-							Recognised for strong academic performance in
-							the Diploma in Computer Science
-						</p>
+						<hr>
 
 
-						<div class="
+						<article class="m-1 d-flex flex-column gap-2">
+
+							<p class="h5 fw-bold">
+								Dean's List Award
+							</p>
+
+							<p>
+								Associated with Universiti Teknikal Malaysia Melaka
+							</p>
+
+							<p>
+								Issued Oct 2025
+							</p>
+
+							<p>
+								Recognised for strong academic performance in
+								the Diploma in Computer Science
+							</p>
+
+
+							<div class="
 								skills
 								d-flex
 								flex-wrap
 								align-items-center
 							">
-							Skills:
+								Skills:
 
-							<div class="badge text-bg-secondary m-1">
-								Software Engineering
+								<div class="badge text-bg-secondary m-1">
+									Software Engineering
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									System Analysis
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									Database Design
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									Web Development
+								</div>
+
 							</div>
 
-							<div class="badge text-bg-secondary m-1">
-								System Analysis
+
+							<div class="images d-flex flex-wrap">
+
+								<div class="image rounded-1 m-1"
+									style="background-image:url('../images/cover-image.png');"></div>
+
 							</div>
 
-							<div class="badge text-bg-secondary m-1">
-								Database Design
-							</div>
-
-							<div class="badge text-bg-secondary m-1">
-								Web Development
-							</div>
-
-						</div>
+						</article>
 
 
-						<div class="images d-flex flex-wrap">
-
-							<div class="image rounded-1 m-1"
-								style="background-image:url('../images/cover-image.png');"></div>
-
-						</div>
-
-					</article>
+						<hr>
 
 
-					<hr>
-
-
-					<a href="./honors&awards.html" class="d-flex justify-content-center align-items-center">
-						Show All
-					</a>
-
-				</section>
-
-
-				<!-- =================================================
-					CERTIFICATION
-				================================================= -->
-
-				<section id="certifications" class="d-flex flex-column gap-1">
-
-					<h3 class="fw-bold text-sm-center text-lg-start">
-						Certifications
-					</h3>
-
-
-					<div class="icon-container">
-
-						<a href="./certifications.html" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
+						<a href="./honors&awards.html" class="d-flex justify-content-center align-items-center">
+							Show All
 						</a>
 
-					</div>
+					</section>
+
+					<section id="certifications" class="d-flex flex-column gap-1">
+
+						<h3 class="fw-bold text-sm-center text-lg-start">
+							Certifications
+						</h3>
 
 
-					<hr>
+						<div class="icon-container">
+
+							<a href="./certifications.html" class="btn btn-secondary icon">
+								<i class="fa-solid fa-pencil"></i>
+							</a>
+
+						</div>
 
 
-					<article class="m-1">
-
-						<p class="h5 fw-bold">
-							Oracle Certified Foundations Associate,
-							Database
-						</p>
-
-						<p>
-							Oracle Academy
-						</p>
-
-						<p>
-							Issued Oct 2025
-						</p>
-
-						<p>
-							Credential ID: OCFA-ARIF-2025
-						</p>
+						<hr>
 
 
-						<a class="
+						<article class="m-1">
+
+							<p class="h5 fw-bold">
+								Oracle Certified Foundations Associate,
+								Database
+							</p>
+
+							<p>
+								Oracle Academy
+							</p>
+
+							<p>
+								Issued Oct 2025
+							</p>
+
+							<p>
+								Credential ID: OCFA-ARIF-2025
+							</p>
+
+
+							<a class="
 								btn
 								btn-outline-secondary
 								d-flex
@@ -883,58 +834,68 @@
 								align-items-center
 								gap-2
 							" style="width:200px;" target="_blank" rel="noopener noreferrer" href="#">
-							<span>
-								Show credential
-							</span>
+								<span>
+									Show credential
+								</span>
 
-							<i class="fa-solid fa-up-right-from-square"></i>
-						</a>
+								<i class="fa-solid fa-up-right-from-square"></i>
+							</a>
 
 
-						<div class="
+							<div class="
 								skills
 								d-flex
 								flex-wrap
 								align-items-center
 							">
-							Skills:
+								Skills:
 
-							<div class="badge text-bg-secondary m-1">
-								Software Engineering
+								<div class="badge text-bg-secondary m-1">
+									Software Engineering
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									System Analysis
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									Database Design
+								</div>
+
+								<div class="badge text-bg-secondary m-1">
+									Web Development
+								</div>
+
 							</div>
 
-							<div class="badge text-bg-secondary m-1">
-								System Analysis
-							</div>
+						</article>
 
-							<div class="badge text-bg-secondary m-1">
-								Database Design
-							</div>
 
-							<div class="badge text-bg-secondary m-1">
-								Web Development
-							</div>
+						<hr>
 
+
+						<a href="./certifications.html" class="d-flex justify-content-center align-items-center">
+							Show All
+						</a>
+
+					</section>
+				</div>
+				<div id="resultTabContent" class="d-none">
+
+					<section>
+						<div class="d-flex justify-content-between align-items-center">
+							<h3 class="fw-bold">Semester Results</h3>
 						</div>
 
-					</article>
+						<hr>
 
+						<div id="semesterResultList">
+							<!-- AJAX akan render sini -->
+						</div>
+					</section>
 
-					<hr>
-
-
-					<a href="./certifications.html" class="d-flex justify-content-center align-items-center">
-						Show All
-					</a>
-
-				</section>
-
+				</div>
 			</div>
-
-
-			<!-- =====================================================
-				RIGHT
-			===================================================== -->
 
 			<div class="user-card-right">
 
@@ -1046,11 +1007,6 @@
 
 		</div>
 
-
-		<!-- =========================================================
-			ADD SECTION OFFCANVAS
-		========================================================= -->
-
 		<div class="offcanvas m-auto" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
 
 			<div class="offcanvas-header">
@@ -1151,11 +1107,6 @@
 			</div>
 
 		</div>
-
-
-		<!-- =========================================================
-			IMAGE PREVIEW
-		========================================================= -->
 
 		<div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-hidden="true">
 
@@ -1283,11 +1234,6 @@
 			</div>
 
 		</div>
-
-
-		<!-- =========================================================
-			EDIT ABOUT
-		========================================================= -->
 
 		<div class="modal fade" id="editAboutModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
 
@@ -1475,6 +1421,80 @@
 
 	<script>
 		$(document).ready(function () {
+
+			let resultLoaded = false;
+			$(".profile-tab").on("click", function () {
+				$(".profile-tab").removeClass("active");
+				$(this).addClass("active");
+
+				const target = $(this).data("target");
+				if (target === "main") {
+					$("#mainTabContent").removeClass("d-none");
+					$("#resultTabContent").addClass("d-none");
+				
+				} else if (target === "result") {
+					$("#mainTabContent").addClass("d-none");
+					$("#resultTabContent").removeClass("d-none");
+					if (!resultLoaded) loadSemesterResults()
+				}
+			});
+
+
+			function loadSemesterResults() {
+
+				$("#semesterResultList").html(`
+					<div class="text-center py-4">
+						<div class="spinner-border text-primary"></div>
+						<p class="mt-2">Loading results...</p>
+					</div>
+				`);
+
+				$.ajax({
+					url: "../data/semester-results.json",
+					type: "GET",
+					dataType: "json",
+					success: function (response) {
+						let html = "";
+						response.forEach(function (result) {
+							html += `
+								<article class="semester-result-item py-3">
+									<div class="d-flex justify-content-between align-items-center">
+										<div>
+											<p class="fw-bold mb-1">
+												${result.semester}
+											</p>
+											<p class="text-muted mb-0">
+												Session ${result.session}
+											</p>
+										</div>
+										<a href="${result.file}"
+											target="_blank"
+											class="btn btn-outline-primary">
+											<i class="fa-regular fa-file-pdf me-1"></i>
+											View Result
+										</a>
+									</div>
+								</article>
+								<hr>`;
+						});
+
+						$("#semesterResultList").html(html);
+
+						resultLoaded = true;
+					},
+
+					error: function (xhr, status, error) {
+
+						console.error(error);
+
+						$("#semesterResultList").html(`
+							<div class="alert alert-danger">
+							Failed to load semester results.
+							</div>
+						`);
+					}
+				});
+			}
 
 
 			let profileModalEl = document.getElementById("editProfileModal");

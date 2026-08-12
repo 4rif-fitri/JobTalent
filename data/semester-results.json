@@ -1,0 +1,20 @@
+[
+	{
+		"id": 1,
+		"semester": "Semester 1",
+		"session": "2024/2025",
+		"file": "../files/result-sem-1.pdf"
+	},
+	{
+		"id": 2,
+		"semester": "Semester 2",
+		"session": "2024/2025",
+		"file": "../files/result-sem-2.pdf"
+	},
+	{
+		"id": 3,
+		"semester": "Semester 1",
+		"session": "2025/2026",
+		"file": "../files/result-sem-3.pdf"
+	}
+]
