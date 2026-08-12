@@ -123,11 +123,10 @@
 						<a href="profile.html" class="h3">
 							<i class="fa-solid fa-arrow-left"></i>
 						</a>
-						<h3 class="fw-bold">Languages</h3>
+						<h3 class="fw-bold">Skills</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal"
-							data-bs-target="#addSkillModal">
+						<button type="button" class="btn bg-primary icon" onclick="openAddSkill()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -136,122 +135,148 @@
 				<hr>
 
 				<article class="m-1 position-relative">
+
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateSkillModal">
+						<button type="button" class="btn btn-secondary icon" onclick="editSkill(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
 
-					<p class="fw-bold">Database</p>
-					<p>Advanced</p>
-				</article>
+					<div class="d-flex align-items-center gap-3">
 
-				<hr>
+						<div>
+							<p class="fw-bold mb-1">
+								Database
+							</p>
 
-				<article class="m-1 position-relative">
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateSkillModal">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
+							<p class="mb-0">
+								Advanced
+							</p>
+						</div>
+
 					</div>
 
-					<p class="fw-bold">Database</p>
-					<p>Advanced</p>
 				</article>
 
 			</div>
 		</div>
+		<div class="modal fade" id="skillModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
 
-		<div class="modal fade" id="addSkillModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
 				<div class="modal-content">
-					<form id="addSkillForm" action="#" method="POST">
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Add Skill</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
+
+					<div class="modal-header">
+
+						<h5 class="modal-title">
+							Add Skill
+						</h5>
+
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+					</div>
+
+					<div class="modal-body">
+
+						<div class="mb-3">
+
+							<label for="skillSelect" class="form-label">
+								Skill
+							</label>
+
+							<select id="skillSelect" class="form-select" required>
+								<option value="" selected disabled>
+									Select Skill
+								</option>
+
+								<option value="1">
+									Database
+								</option>
+
+								<option value="2">
+									PHP
+								</option>
+
+								<option value="3">
+									Laravel
+								</option>
+
+								<option value="4">
+									JavaScript
+								</option>
+
+								<option value="5">
+									React
+								</option>
+
+								<option value="6">
+									Vue.js
+								</option>
+
+								<option value="7">
+									MySQL
+								</option>
+
+								<option value="8">
+									Web Development
+								</option>
+
+							</select>
+
 						</div>
 
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<select class="form-select" id="skillSelect" name="skill" required>
-									<option selected disabled value="">Select Skill</option>
-									<option value="PHP">PHP</option>
-									<option value="Laravel">Laravel</option>
-									<option value="JavaScript">JavaScript</option>
-									<option value="Vue">Vue.js</option>
-									<option value="React">React</option>
-									<option value="MySQL">MySQL</option>
-									<option value="HTML_CSS">HTML & CSS</option>
-								</select>
-							</div>
-							<div class="input-group mb-3">
-								<select class="form-select" id="proficiencySelect" name="proficiency" required>
-									<option selected disabled value="">Select Proficiency</option>
-									<option value="Beginner">Beginner</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Advanced">Advanced</option>
-									<option value="Expert">Expert</option>
-								</select>
-							</div>
+
+						<div class="mb-3">
+
+							<label for="skillLevel" class="form-label">
+								Level
+							</label>
+
+							<select id="skillLevel" class="form-select" required>
+								<option value="" selected disabled>
+									Select Level
+								</option>
+
+								<option value="Beginner">
+									Beginner
+								</option>
+
+								<option value="Intermediate">
+									Intermediate
+								</option>
+
+								<option value="Advanced">
+									Advanced
+								</option>
+
+								<option value="Expert">
+									Expert
+								</option>
+
+							</select>
+
 						</div>
 
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
-						</div>
-					</form>
+					</div>
+
+
+					<div class="modal-footer justify-content-between">
+
+						<button type="button" id="btnDeleteSkill"
+							class="btn btn-link text-danger text-decoration-none d-none">
+							Delete
+						</button>
+
+						<button type="button" id="btnSaveSkill" class="btn btn-primary">
+							Save
+						</button>
+
+					</div>
+
 				</div>
+
 			</div>
 		</div>
 
-		<div class="modal fade" id="updateSkillModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-
-					<form id="updateSkillForm" action="#" method="POST">
-
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Add Skill</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<select class="form-select" id="skillSelect" name="skill" required>
-									<option selected disabled value="">Select Skill</option>
-									<option value="PHP">PHP</option>
-									<option value="Laravel">Laravel</option>
-									<option value="JavaScript">JavaScript</option>
-									<option value="Vue">Vue.js</option>
-									<option value="React">React</option>
-									<option value="MySQL">MySQL</option>
-									<option value="HTML_CSS">HTML & CSS</option>
-								</select>
-							</div>
-							<div class="input-group mb-3">
-								<select class="form-select" id="proficiencySelect" name="proficiency" required>
-									<option selected disabled value="">Select Proficiency</option>
-									<option value="Beginner">Beginner</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Advanced">Advanced</option>
-									<option value="Expert">Expert</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="modal-footer d-flex justify-content-between">
-							<button type="button" class="btn btn-danger">Delete</button>
-							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
-						</div>
-
-					</form>
-
-				</div>
-			</div>
-		</div>
 	</main>
 
 	<script src="../libs/jquery-4.0.0.min.js"></script>
@@ -262,7 +287,382 @@
 	<script src="../js/layout.js"></script>
 
 	<script>
+		/*
+		|--------------------------------------------------------------------------
+		| STATE
+		|--------------------------------------------------------------------------
+		*/
 
+		let skillMode = "add";
+		let editingStudentSkillId = null;
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ELEMENTS
+		|--------------------------------------------------------------------------
+		*/
+
+		const skillModalEl =
+			document.getElementById(
+				"skillModal"
+			);
+
+		const skillModal =
+			bootstrap.Modal.getOrCreateInstance(
+				skillModalEl
+			);
+
+		const skillSelect =
+			document.getElementById(
+				"skillSelect"
+			);
+
+		const skillLevel =
+			document.getElementById(
+				"skillLevel"
+			);
+
+		const btnSaveSkill =
+			document.getElementById(
+				"btnSaveSkill"
+			);
+
+		const btnDeleteSkill =
+			document.getElementById(
+				"btnDeleteSkill"
+			);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ADD
+		|--------------------------------------------------------------------------
+		*/
+
+		function openAddSkill() {
+
+			skillMode =
+				"add";
+
+			editingStudentSkillId =
+				null;
+
+
+			document.querySelector(
+				"#skillModal .modal-title"
+			).textContent =
+				"Add Skill";
+
+
+			btnSaveSkill.textContent =
+				"Save";
+
+
+			btnDeleteSkill
+				.classList
+				.add("d-none");
+
+
+			skillSelect.value =
+				"";
+
+			skillLevel.value =
+				"";
+
+
+			skillModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| EDIT
+		|--------------------------------------------------------------------------
+		*/
+
+		function editSkill(id) {
+
+			skillMode =
+				"edit";
+
+			editingStudentSkillId =
+				id;
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| DUMMY DATA
+			| Nanti tukar kepada GET /student-skills/{id}
+			|--------------------------------------------------------------------------
+			*/
+
+			const data = {
+
+				id:
+					id,
+
+				skill_id:
+					"1",
+
+				level:
+					"Advanced"
+
+			};
+
+
+			document.querySelector(
+				"#skillModal .modal-title"
+			).textContent =
+				"Edit Skill";
+
+
+			btnSaveSkill.textContent =
+				"Update";
+
+
+			btnDeleteSkill
+				.classList
+				.remove("d-none");
+
+
+			skillSelect.value =
+				data.skill_id;
+
+			skillLevel.value =
+				data.level;
+
+
+			skillModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| SAVE / UPDATE
+		|--------------------------------------------------------------------------
+		*/
+
+		btnSaveSkill.addEventListener(
+			"click",
+			function () {
+
+				const skillId =
+					skillSelect.value;
+
+				const level =
+					skillLevel.value;
+
+
+				if (!skillId) {
+
+					alert(
+						"Please select a skill."
+					);
+
+					return;
+				}
+
+
+				if (!level) {
+
+					alert(
+						"Please select a level."
+					);
+
+					return;
+				}
+
+
+				const data = {
+
+					skill_id:
+						skillId,
+
+					level:
+						level
+
+				};
+
+
+				let url;
+				let type;
+
+
+				/*
+				|--------------------------------------------------------------------------
+				| ADD
+				|--------------------------------------------------------------------------
+				*/
+
+				if (
+					skillMode === "add"
+				) {
+
+					url =
+						"/student-skills";
+
+					type =
+						"POST";
+
+				}
+
+				/*
+				|--------------------------------------------------------------------------
+				| UPDATE
+				|--------------------------------------------------------------------------
+				*/
+
+				else {
+
+					url =
+						`/student-skills/${editingStudentSkillId}`;
+
+					type =
+						"PUT";
+
+				}
+
+
+				console.log(
+					"MODE:",
+					skillMode
+				);
+
+				console.log(
+					"URL:",
+					url
+				);
+
+				console.log(
+					data
+				);
+
+
+				/*
+				|--------------------------------------------------------------------------
+				| AJAX
+				|--------------------------------------------------------------------------
+				*/
+
+				$.ajax({
+
+					url:
+						url,
+
+					type:
+						type,
+
+					data:
+						data,
+
+					success:
+						function (response) {
+
+							console.log(
+								response
+							);
+
+							skillModal.hide();
+
+						},
+
+					error:
+						function (xhr) {
+
+							console.log(
+								xhr.responseJSON
+							);
+
+						}
+
+				});
+
+			}
+		);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| DELETE
+		|--------------------------------------------------------------------------
+		*/
+
+		btnDeleteSkill.addEventListener(
+			"click",
+			function () {
+
+				if (
+					skillMode !== "edit" ||
+					!editingStudentSkillId
+				) {
+					return;
+				}
+
+
+				Swal.fire({
+
+					title:
+						"Delete skill?",
+
+					text:
+						"This skill will be removed from your profile.",
+
+					icon:
+						"warning",
+
+					showCancelButton:
+						true,
+
+					confirmButtonText:
+						"Delete",
+
+					cancelButtonText:
+						"Cancel"
+
+				}).then(
+					function (result) {
+
+						if (!result.isConfirmed) {
+							return;
+						}
+
+
+						$.ajax({
+
+							url:
+								`/student-skills/${editingStudentSkillId}`,
+
+							type:
+								"DELETE",
+
+							success:
+								function (response) {
+
+									console.log(
+										response
+									);
+
+									skillModal.hide();
+
+								},
+
+							error:
+								function (xhr) {
+
+									console.log(
+										xhr.responseJSON
+									);
+
+								}
+
+						});
+
+					}
+				);
+
+			}
+		);
 	</script>
 </body>
 

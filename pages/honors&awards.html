@@ -126,7 +126,7 @@
 						<h3 class="fw-bold">Honors & Awards</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon">
+						<button type="button" class="btn bg-primary icon" onclick="openAddHonorAward()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -137,7 +137,7 @@
 				<article class="m-1 d-flex flex-column gap-2 position-relative">
 
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" onclick="editHonorAward(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -184,105 +184,198 @@
 
 				</article>
 
-				<hr>
 
-				<article class="m-1 d-flex flex-column gap-2 position-relative">
 
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
+			</div>
+		</div>
+
+		<div class="modal fade" id="honorAwardModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+		
+				<div class="modal-content h-75">
+		
+					<div class="modal-header">
+		
+						<h5 class="modal-title">
+							Add Honor & Award
+						</h5>
+		
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+		
+					</div>
+		
+					<div class="modal-body">
+		
+						<div class="mb-3">
+		
+							<label for="honorTitle" class="form-label">
+								Title
+							</label>
+		
+							<input type="text" id="honorTitle" class="form-control" placeholder="e.g. Dean's List Award"
+								required>
+		
+						</div>
+		
+		
+						<div class="mb-3">
+		
+							<label for="honorOrganization" class="form-label">
+								Associated Organization
+							</label>
+		
+							<input type="text" id="honorOrganization" class="form-control"
+								placeholder="e.g. Universiti Teknikal Malaysia Melaka">
+		
+						</div>
+		
+		
+						<div class="mb-3">
+		
+							<label for="honorIssuedDate" class="form-label">
+								Issued Date
+							</label>
+		
+							<input type="date" id="honorIssuedDate" class="form-control" required>
+		
+						</div>
+		
+		
+						<div class="mb-3">
+		
+							<label for="honorDescription" class="form-label">
+								Description
+							</label>
+		
+							<textarea id="honorDescription" class="form-control" rows="4"
+								placeholder="Describe this award"></textarea>
+		
+						</div>
+		
+		
+						<div class="mb-4">
+		
+							<label class="form-label">
+								Skills
+							</label>
+		
+							<div>
+		
+								<button type="button" id="addHonorSkill" class="btn btn-outline-primary btn-sm">
+									+ Add Skill
+								</button>
+		
+								<div id="honorSkillContainer" class="mt-3"></div>
+		
+							</div>
+		
+						</div>
+		
+		
+						<div class="mb-3">
+		
+							<label class="form-label fw-semibold">
+								Media
+							</label>
+		
+							<p class="text-muted small mb-2">
+								Add images related to this award.
+							</p>
+		
+							<input type="file" id="honorMediaInput" accept="image/*" hidden>
+		
+							<button type="button" id="addHonorMedia" class="btn btn-outline-primary btn-sm">
+								+ Add Media
+							</button>
+		
+							<div id="honorMediaContainer" class="d-flex flex-wrap gap-2 mt-3"></div>
+		
+						</div>
+		
+					</div>
+		
+		
+					<div class="modal-footer">
+		
+						<button type="button" id="btnSaveHonorAward" class="btn btn-primary">
+							Save
 						</button>
+		
 					</div>
+		
+				</div>
+		
+			</div>
+		</div>
 
-					<p class="h5 fw-bold">Dean's List Award</p>
-					<p>Associated with Universiti Teknikal Malaysia Melaka</p>
-					<p>Issued Oct 2025</p>
-
-					<!-- <div class="d-flex align-items-center company-group">
-									                         <img src="../images/utemjpg.jpg" alt="" style="width: 50px; border-radius: 50%;"> -->
-					<!-- <p>Associated with Universiti Teknikal Malaysia Melaka</p> -->
-					<!-- </div> -->
-
-					<p>Recognised for strong academic performance in the Diploma in Computer Science</p>
-
-					<div class="skills d-flex flex-wrap align-items-center">
-						Skills:
-						<div class="badge text-bg-secondary m-1">
-							<span>Software Engineering</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>System Analysis</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Database Design</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Web Development</span>
-						</div>
+		<div class="modal fade" id="honorAwardMediaModal" data-bs-backdrop="static" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+		
+				<div class="modal-content">
+		
+					<div class="modal-header">
+		
+						<h5 class="modal-title">
+							Edit media
+						</h5>
+		
+						<button type="button" class="btn-close" id="closeHonorMedia"></button>
+		
 					</div>
-
-					<div class="images d-flex flex-wrap">
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
+		
+		
+					<div class="modal-body">
+		
+						<div class="mb-3">
+		
+							<label class="form-label">
+								Title
+							</label>
+		
+							<input type="text" id="honorMediaTitle" class="form-control">
+		
 						</div>
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
+		
+		
+						<div class="mb-3">
+		
+							<label class="form-label">
+								Description
+							</label>
+		
+							<textarea id="honorMediaDescription" class="form-control" rows="4"></textarea>
+		
 						</div>
-						<div class="image rounded-1 m-1 d-flex justify-content-center align-items-center"
-							style="background-image: url('../images/cover-image.png'); filter: brightness(0.5);">
-							<h4 class="text-white">+5</h4>
-						</div>
+		
+		
+						<div id="honorMediaPreview"></div>
+		
 					</div>
-
-				</article>
-
-				<hr>
-
-				<article class="m-1 d-flex flex-column gap-2 position-relative">
-
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
+		
+		
+					<div class="modal-footer justify-content-between">
+		
+						<button type="button" id="deleteHonorMedia"
+							class="btn btn-link text-danger text-decoration-none d-none">
+							Delete
 						</button>
+		
+						<div>
+		
+							<button type="button" id="backHonorMedia" class="btn btn-outline-secondary">
+								Back
+							</button>
+		
+							<button type="button" id="saveHonorMedia" class="btn btn-primary">
+								Save
+							</button>
+		
+						</div>
+		
 					</div>
-
-					<p class="h5 fw-bold">EduMaths – Complements to 10 Learning Platform</p>
-					<p>Jul 2026 - Aug 2026 (Part-time)</p>
-
-					<p>Designed an interactive mathematics learning platform for primary school
-						pupils.</p>
-
-					<div class="skills d-flex flex-wrap align-items-center">
-						Skills:
-						<div class="badge text-bg-secondary m-1">
-							<span>Software Engineering</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>System Analysis</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Database Design</span>
-						</div>
-						<div class="badge text-bg-secondary m-1">
-							<span>Web Development</span>
-						</div>
-					</div>
-
-					<div class="images d-flex flex-wrap">
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
-						</div>
-						<div class="image rounded-1 m-1"
-							style="background-image: url('../images/cover-image.png')">
-						</div>
-						<div class="image rounded-1 m-1 d-flex justify-content-center align-items-center"
-							style="background-image: url('../images/cover-image.png'); filter: brightness(0.5);">
-							<h4 class="text-white">+5</h4>
-						</div>
-					</div>
-
-				</article>
-
+		
+				</div>
+		
 			</div>
 		</div>
 	</main>
@@ -295,7 +388,1196 @@
 	<script src="../js/layout.js"></script>
 
 	<script>
+	/*
+	|--------------------------------------------------------------------------
+	| STATE
+	|--------------------------------------------------------------------------
+	*/
 
+	let honorMode = "add";
+	let editingHonorId = null;
+
+	let honorMediaList = [];
+	let deletedHonorMediaIds = [];
+
+	let selectedHonorImage = null;
+	let editingHonorMediaIndex = null;
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ELEMENTS
+	|--------------------------------------------------------------------------
+	*/
+
+	const honorModalEl =
+		document.getElementById("honorAwardModal");
+
+	const honorModal =
+		bootstrap.Modal.getOrCreateInstance(
+			honorModalEl
+		);
+
+	const honorMediaModalEl =
+		document.getElementById(
+			"honorAwardMediaModal"
+		);
+
+	const honorMediaModal =
+		bootstrap.Modal.getOrCreateInstance(
+			honorMediaModalEl
+		);
+
+	const honorSkillContainer =
+		document.getElementById(
+			"honorSkillContainer"
+		);
+
+	const addHonorSkillBtn =
+		document.getElementById(
+			"addHonorSkill"
+		);
+
+	const honorMediaInput =
+		document.getElementById(
+			"honorMediaInput"
+		);
+
+	const addHonorMediaBtn =
+		document.getElementById(
+			"addHonorMedia"
+		);
+
+	const honorMediaContainer =
+		document.getElementById(
+			"honorMediaContainer"
+		);
+
+	const honorMediaTitle =
+		document.getElementById(
+			"honorMediaTitle"
+		);
+
+	const honorMediaDescription =
+		document.getElementById(
+			"honorMediaDescription"
+		);
+
+	const honorMediaPreview =
+		document.getElementById(
+			"honorMediaPreview"
+		);
+
+	const saveHonorMediaBtn =
+		document.getElementById(
+			"saveHonorMedia"
+		);
+
+	const deleteHonorMediaBtn =
+		document.getElementById(
+			"deleteHonorMedia"
+		);
+
+	const backHonorMediaBtn =
+		document.getElementById(
+			"backHonorMedia"
+		);
+
+	const closeHonorMediaBtn =
+		document.getElementById(
+			"closeHonorMedia"
+		);
+
+	const btnSaveHonorAward =
+		document.getElementById(
+			"btnSaveHonorAward"
+		);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SKILLS
+	|--------------------------------------------------------------------------
+	*/
+
+	function createHonorSkillRow(
+		skill = "",
+		proficiency = ""
+	) {
+
+		const row =
+			document.createElement("div");
+
+		row.className =
+			"honor-skill-row mb-2";
+
+		row.innerHTML = `
+		<div class="input-group">
+
+			<select
+				class="form-select honor-skill"
+			>
+
+				<option
+					value=""
+					disabled
+					${skill === "" ? "selected" : ""}
+				>
+					Select Skill
+				</option>
+
+				<option
+					value="PHP"
+					${skill === "PHP" ? "selected" : ""}
+				>
+					PHP
+				</option>
+
+				<option
+					value="Laravel"
+					${skill === "Laravel" ? "selected" : ""}
+				>
+					Laravel
+				</option>
+
+				<option
+					value="JavaScript"
+					${skill === "JavaScript" ? "selected" : ""}
+				>
+					JavaScript
+				</option>
+
+				<option
+					value="Vue"
+					${skill === "Vue" ? "selected" : ""}
+				>
+					Vue.js
+				</option>
+
+				<option
+					value="React"
+					${skill === "React" ? "selected" : ""}
+				>
+					React
+				</option>
+
+				<option
+					value="MySQL"
+					${skill === "MySQL" ? "selected" : ""}
+				>
+					MySQL
+				</option>
+
+				<option
+					value="HTML_CSS"
+					${skill === "HTML_CSS" ? "selected" : ""}
+				>
+					HTML & CSS
+				</option>
+
+			</select>
+
+
+			<select
+				class="form-select honor-proficiency"
+			>
+
+				<option
+					value=""
+					disabled
+					${proficiency === "" ? "selected" : ""}
+				>
+					Select Proficiency
+				</option>
+
+				<option
+					value="Beginner"
+					${proficiency === "Beginner" ? "selected" : ""}
+				>
+					Beginner
+				</option>
+
+				<option
+					value="Intermediate"
+					${proficiency === "Intermediate" ? "selected" : ""}
+				>
+					Intermediate
+				</option>
+
+				<option
+					value="Advanced"
+					${proficiency === "Advanced" ? "selected" : ""}
+				>
+					Advanced
+				</option>
+
+				<option
+					value="Expert"
+					${proficiency === "Expert" ? "selected" : ""}
+				>
+					Expert
+				</option>
+
+			</select>
+
+
+			<button
+				type="button"
+				class="
+					btn
+					btn-outline-danger
+					remove-honor-skill
+				"
+			>
+				<i class="fa-solid fa-trash"></i>
+			</button>
+
+		</div>
+	`;
+
+		return row;
+	}
+
+
+	addHonorSkillBtn.addEventListener(
+		"click",
+		function () {
+
+			honorSkillContainer.appendChild(
+				createHonorSkillRow()
+			);
+
+		}
+	);
+
+
+	honorSkillContainer.addEventListener(
+		"click",
+		function (event) {
+
+			const button =
+				event.target.closest(
+					".remove-honor-skill"
+				);
+
+			if (!button) return;
+
+			const row =
+				button.closest(
+					".honor-skill-row"
+				);
+
+			if (row) {
+				row.remove();
+			}
+
+		}
+	);
+
+
+	function renderHonorSkills(
+		skills = []
+	) {
+
+		honorSkillContainer.innerHTML =
+			"";
+
+		skills.forEach(
+			function (skill) {
+
+				honorSkillContainer.appendChild(
+					createHonorSkillRow(
+						skill.skill,
+						skill.proficiency
+					)
+				);
+
+			}
+		);
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	addHonorMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			editingHonorMediaIndex =
+				null;
+
+			selectedHonorImage =
+				null;
+
+			honorMediaInput.value =
+				"";
+
+			deleteHonorMediaBtn
+				.classList
+				.add("d-none");
+
+			honorMediaInput.click();
+
+		}
+	);
+
+
+	honorMediaInput.addEventListener(
+		"change",
+		function () {
+
+			const file =
+				this.files[0];
+
+			if (!file) return;
+
+
+			if (!file.type.startsWith("image/")) {
+
+				alert(
+					"Please select an image."
+				);
+
+				this.value = "";
+
+				return;
+			}
+
+
+			const maxSize =
+				5 * 1024 * 1024;
+
+			if (file.size > maxSize) {
+
+				alert(
+					"Image must be less than 5MB."
+				);
+
+				this.value = "";
+
+				return;
+			}
+
+
+			selectedHonorImage =
+				file;
+
+			editingHonorMediaIndex =
+				null;
+
+
+			honorMediaTitle.value =
+				file.name.replace(
+					/\.[^/.]+$/,
+					""
+				);
+
+			honorMediaDescription.value =
+				"";
+
+
+			showHonorMediaPreview(
+				file
+			);
+
+
+			honorModalEl.addEventListener(
+				"hidden.bs.modal",
+				function () {
+
+					honorMediaModal.show();
+
+				},
+				{
+					once: true
+				}
+			);
+
+			honorModal.hide();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| PREVIEW MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function showHonorMediaPreview(
+		file
+	) {
+
+		const url =
+			URL.createObjectURL(file);
+
+		honorMediaPreview.innerHTML = `
+		<img
+			src="${url}"
+			class="rounded border"
+			style="
+				width:120px;
+				height:90px;
+				object-fit:cover;
+			"
+		>
+	`;
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SAVE MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	saveHonorMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			const title =
+				honorMediaTitle.value.trim();
+
+			const description =
+				honorMediaDescription.value.trim();
+
+
+			if (!title) {
+
+				alert(
+					"Title is required."
+				);
+
+				return;
+			}
+
+
+			if (
+				editingHonorMediaIndex ===
+				null
+			) {
+
+				if (!selectedHonorImage) {
+					return;
+				}
+
+
+				honorMediaList.push({
+
+					id:
+						null,
+
+					file:
+						selectedHonorImage,
+
+					title:
+						title,
+
+					description:
+						description,
+
+					preview:
+						URL.createObjectURL(
+							selectedHonorImage
+						)
+
+				});
+
+			} else {
+
+				honorMediaList[
+					editingHonorMediaIndex
+				].title =
+					title;
+
+				honorMediaList[
+					editingHonorMediaIndex
+				].description =
+					description;
+
+			}
+
+
+			renderHonorMedia();
+
+			resetHonorMediaForm();
+
+			backToHonor();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| RENDER MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function renderHonorMedia() {
+
+		honorMediaContainer.innerHTML =
+			"";
+
+
+		honorMediaList.forEach(
+			function (media, index) {
+
+				const item =
+					document.createElement(
+						"div"
+					);
+
+				item.innerHTML = `
+				<div
+					class="position-relative"
+					style="
+						width:100px;
+						height:75px;
+					"
+				>
+
+					<img
+						src="${media.preview}"
+						class="rounded border"
+						style="
+							width:100%;
+							height:100%;
+							object-fit:cover;
+						"
+					>
+
+					<button
+						type="button"
+						class="
+							btn
+							btn-light
+							btn-sm
+							rounded-circle
+							position-absolute
+							bottom-0
+							end-0
+						"
+						onclick="
+							editHonorMedia(${index})
+						"
+					>
+						<i class="fa-solid fa-pen"></i>
+					</button>
+
+				</div>
+
+				<small
+					class="d-block text-truncate"
+					style="width:100px;"
+				>
+					${media.title}
+				</small>
+			`;
+
+
+				honorMediaContainer.appendChild(
+					item
+				);
+
+			}
+		);
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| EDIT MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function editHonorMedia(index) {
+
+		if (!honorMediaList[index]) {
+			return;
+		}
+
+
+		editingHonorMediaIndex =
+			index;
+
+
+		const media =
+			honorMediaList[index];
+
+
+		selectedHonorImage =
+			media.file ?? null;
+
+
+		honorMediaTitle.value =
+			media.title;
+
+
+		honorMediaDescription.value =
+			media.description ?? "";
+
+
+		honorMediaPreview.innerHTML = `
+		<img
+			src="${media.preview}"
+			class="rounded border"
+			style="
+				width:120px;
+				height:90px;
+				object-fit:cover;
+			"
+		>
+	`;
+
+
+		deleteHonorMediaBtn
+			.classList
+			.remove("d-none");
+
+
+		honorModalEl.addEventListener(
+			"hidden.bs.modal",
+			function () {
+
+				honorMediaModal.show();
+
+			},
+			{
+				once: true
+			}
+		);
+
+
+		honorModal.hide();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| DELETE MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	deleteHonorMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			if (
+				editingHonorMediaIndex ===
+				null
+			) {
+				return;
+			}
+
+
+			const media =
+				honorMediaList[
+				editingHonorMediaIndex
+				];
+
+
+			if (media.id) {
+
+				deletedHonorMediaIds.push(
+					media.id
+				);
+
+			}
+
+
+			if (
+				media.preview &&
+				media.preview.startsWith(
+					"blob:"
+				)
+			) {
+
+				URL.revokeObjectURL(
+					media.preview
+				);
+
+			}
+
+
+			honorMediaList.splice(
+				editingHonorMediaIndex,
+				1
+			);
+
+
+			renderHonorMedia();
+
+			resetHonorMediaForm();
+
+			backToHonor();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| BACK MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function backToHonor() {
+
+		honorMediaModalEl.addEventListener(
+			"hidden.bs.modal",
+			function () {
+
+				honorModal.show();
+
+			},
+			{
+				once: true
+			}
+		);
+
+		honorMediaModal.hide();
+	}
+
+
+	backHonorMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			resetHonorMediaForm();
+
+			backToHonor();
+
+		}
+	);
+
+
+	closeHonorMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			resetHonorMediaForm();
+
+			backToHonor();
+
+		}
+	);
+
+
+	function resetHonorMediaForm() {
+
+		selectedHonorImage =
+			null;
+
+		editingHonorMediaIndex =
+			null;
+
+		honorMediaInput.value =
+			"";
+
+		honorMediaTitle.value =
+			"";
+
+		honorMediaDescription.value =
+			"";
+
+		honorMediaPreview.innerHTML =
+			"";
+
+		deleteHonorMediaBtn
+			.classList
+			.add("d-none");
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD HONOR
+	|--------------------------------------------------------------------------
+	*/
+
+	function openAddHonorAward() {
+
+		honorMode =
+			"add";
+
+		editingHonorId =
+			null;
+
+		deletedHonorMediaIds =
+			[];
+
+
+		document.querySelector(
+			"#honorAwardModal .modal-title"
+		).textContent =
+			"Add Honor & Award";
+
+
+		btnSaveHonorAward.textContent =
+			"Save";
+
+
+		$("#honorTitle").val("");
+
+		$("#honorOrganization").val("");
+
+		$("#honorIssuedDate").val("");
+
+		$("#honorDescription").val("");
+
+
+		honorSkillContainer.innerHTML =
+			"";
+
+
+		honorMediaList =
+			[];
+
+
+		renderHonorMedia();
+
+
+		honorModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| EDIT HONOR
+	|--------------------------------------------------------------------------
+	*/
+
+	function editHonorAward(id) {
+
+		honorMode =
+			"edit";
+
+		editingHonorId =
+			id;
+
+		deletedHonorMediaIds =
+			[];
+
+
+		const data = {
+
+			id:
+				id,
+
+			title:
+				"Dean's List Award",
+
+			associated_organization:
+				"Universiti Teknikal Malaysia Melaka",
+
+			issued_date:
+				"2025-10-01",
+
+			description:
+				"Recognised for strong academic performance in the Diploma in Computer Science",
+
+			skills: [
+				{
+					skill:
+						"Software Engineering",
+
+					proficiency:
+						"Advanced"
+				},
+				{
+					skill:
+						"Database Design",
+
+					proficiency:
+						"Intermediate"
+				}
+			],
+
+			media: [
+				{
+					id:
+						1,
+
+					file:
+						null,
+
+					title:
+						"Dean List Certificate",
+
+					description:
+						"Dean list award certificate",
+
+					preview:
+						"../images/cover-image.png"
+				}
+			]
+
+		};
+
+
+		document.querySelector(
+			"#honorAwardModal .modal-title"
+		).textContent =
+			"Edit Honor & Award";
+
+
+		btnSaveHonorAward.textContent =
+			"Update";
+
+
+		$("#honorTitle").val(
+			data.title
+		);
+
+		$("#honorOrganization").val(
+			data.associated_organization
+		);
+
+		$("#honorIssuedDate").val(
+			data.issued_date
+		);
+
+		$("#honorDescription").val(
+			data.description
+		);
+
+
+		renderHonorSkills(
+			data.skills ?? []
+		);
+
+
+		honorMediaList =
+			data.media ?? [];
+
+
+		renderHonorMedia();
+
+
+		honorModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SAVE HONOR
+	|--------------------------------------------------------------------------
+	*/
+
+	btnSaveHonorAward.addEventListener(
+		"click",
+		function () {
+
+			const formData =
+				new FormData();
+
+
+			formData.append(
+				"title",
+				$("#honorTitle").val()
+			);
+
+			formData.append(
+				"associated_organization",
+				$("#honorOrganization").val()
+			);
+
+			formData.append(
+				"issued_date",
+				$("#honorIssuedDate").val()
+			);
+
+			formData.append(
+				"description",
+				$("#honorDescription").val()
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| SKILLS
+			|--------------------------------------------------------------------------
+			*/
+
+			document.querySelectorAll(
+				".honor-skill-row"
+			).forEach(
+				function (row, index) {
+
+					formData.append(
+						`skills[${index}][skill]`,
+						row.querySelector(
+							".honor-skill"
+						).value
+					);
+
+					formData.append(
+						`skills[${index}][proficiency]`,
+						row.querySelector(
+							".honor-proficiency"
+						).value
+					);
+
+				}
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| MEDIA
+			|--------------------------------------------------------------------------
+			*/
+
+			honorMediaList.forEach(
+				function (media, index) {
+
+					if (media.id) {
+
+						formData.append(
+							`media[${index}][id]`,
+							media.id
+						);
+
+					}
+
+
+					if (media.file) {
+
+						formData.append(
+							`media[${index}][file]`,
+							media.file
+						);
+
+					}
+
+
+					formData.append(
+						`media[${index}][title]`,
+						media.title
+					);
+
+					formData.append(
+						`media[${index}][description]`,
+						media.description ?? ""
+					);
+
+				}
+			);
+
+
+			deletedHonorMediaIds.forEach(
+				function (id, index) {
+
+					formData.append(
+						`deleted_media_ids[${index}]`,
+						id
+					);
+
+				}
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| ADD / UPDATE
+			|--------------------------------------------------------------------------
+			*/
+
+			let url;
+
+
+			if (
+				honorMode === "add"
+			) {
+
+				url =
+					"/honors-awards";
+
+			} else {
+
+				url =
+					`/honors-awards/${editingHonorId}`;
+
+				formData.append(
+					"_method",
+					"PUT"
+				);
+
+			}
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| DEBUG
+			|--------------------------------------------------------------------------
+			*/
+
+			for (
+				const [key, value]
+				of formData.entries()
+			) {
+
+				console.log(
+					key,
+					value
+				);
+
+			}
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| AJAX
+			|--------------------------------------------------------------------------
+			*/
+
+			$.ajax({
+
+				url:
+					url,
+
+				type:
+					"POST",
+
+				data:
+					formData,
+
+				processData:
+					false,
+
+				contentType:
+					false,
+
+				success:
+					function (response) {
+
+						console.log(
+							response
+						);
+
+						honorModal.hide();
+
+					},
+
+				error:
+					function (xhr) {
+
+						console.log(
+							xhr.responseJSON
+						);
+
+					}
+
+			});
+
+		}
+	);
 	</script>
 </body>
 

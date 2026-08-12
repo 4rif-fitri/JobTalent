@@ -126,7 +126,7 @@
 						<h3 class="fw-bold">Certifications</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon">
+						<button type="button" class="btn bg-primary icon" 	onclick="openAddCertification()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -136,7 +136,7 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
+						<button type="button" class="btn btn-secondary icon" onclick="editCertification(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -179,103 +179,199 @@
 					</div>
 				</article>
 
-				<hr>
-
-				<article class="m-1 position-relative">
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
-					</div>
-					<div>
-						<!-- <img src="../images/utemjpg.jpg" alt=""
-									                          style="width: 50px !important; border-radius: 50%;"> -->
-					</div>
-					<div class="col d-flex flex-column mx-1">
-						<p class="h5 fw-bold">Oracle Certified Foundations Associate, Database</p>
-						<p>Oracle Academy</p>
-						<p>IIssued Oct 2025</p>
-						<p>Credential ID: OCFA-ARIF-2025</p>
-						<a class="btn btn-outline-secondary d-flex justify-content-center align-items-center gap-2"
-							style="width: 200px;" target="_blank" rel="noopener" href="">
-							<p>Show credential</p>
-							<i class="fa-solid fa-up-right-from-square mx-1"></i>
-						</a>
-
-						<div class="skills d-flex flex-wrap align-items-center">
-							Skills:
-							<div class="badge text-bg-secondary m-1">
-								<span>Software Engineering</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>System Analysis</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>Database Design</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>Web Development</span>
-							</div>
-						</div>
-
-						<div class="images d-flex flex-wrap">
-							<div class="image rounded-1 m-1"
-								style="background-image: url('../images/cover-image.png')">
-							</div>
-						</div>
-					</div>
-				</article>
-
-				<hr>
-
-				<article class="m-1 position-relative">
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
-					</div>
-					<div>
-						<!-- <img src="../images/utemjpg.jpg" alt=""
-													                          style="width: 50px !important; border-radius: 50%;"> -->
-					</div>
-					<div class="col d-flex flex-column mx-1">
-						<p class="h5 fw-bold">Oracle Certified Foundations Associate, Database</p>
-						<p>Oracle Academy</p>
-						<p>IIssued Oct 2025</p>
-						<p>Credential ID: OCFA-ARIF-2025</p>
-						<a class="btn btn-outline-secondary d-flex justify-content-center align-items-center gap-2"
-							style="width: 200px;" target="_blank" rel="noopener" href="">
-							<p>Show credential</p>
-							<i class="fa-solid fa-up-right-from-square mx-1"></i>
-						</a>
-
-						<div class="skills d-flex flex-wrap align-items-center">
-							Skills:
-							<div class="badge text-bg-secondary m-1">
-								<span>Software Engineering</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>System Analysis</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>Database Design</span>
-							</div>
-							<div class="badge text-bg-secondary m-1">
-								<span>Web Development</span>
-							</div>
-						</div>
-
-						<div class="images d-flex flex-wrap">
-							<div class="image rounded-1 m-1"
-								style="background-image: url('../images/cover-image.png')">
-							</div>
-						</div>
-					</div>
-				</article>
-
-
 			</div>
 		</div>
+<!-- ADD / EDIT CERTIFICATION MODAL -->
+<div class="modal fade" id="certificationModal" data-bs-backdrop="static" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+
+		<div class="modal-content h-75">
+
+			<div class="modal-header">
+				<h5 class="modal-title">
+					Add Certification
+				</h5>
+
+				<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+
+			<div class="modal-body">
+
+				<!-- CERTIFICATION NAME -->
+				<div class="mb-3">
+					<label for="certificationName" class="form-label">
+						Certification Name
+					</label>
+
+					<input type="text" id="certificationName" class="form-control"
+						placeholder="e.g. Oracle Certified Foundations Associate, Database" required>
+				</div>
+
+
+				<!-- ISSUING ORGANIZATION -->
+				<div class="mb-3">
+					<label for="certificationOrganization" class="form-label">
+						Issuing Organization
+					</label>
+
+					<input type="text" id="certificationOrganization" class="form-control"
+						placeholder="e.g. Oracle Academy" required>
+				</div>
+
+
+				<!-- ISSUE DATE -->
+				<div class="mb-3">
+					<label for="certificationIssueDate" class="form-label">
+						Issue Date
+					</label>
+
+					<input type="date" id="certificationIssueDate" class="form-control" required>
+				</div>
+
+
+				<!-- CREDENTIAL ID -->
+				<div class="mb-3">
+					<label for="certificationCredentialId" class="form-label">
+						Credential ID
+					</label>
+
+					<input type="text" id="certificationCredentialId" class="form-control"
+						placeholder="e.g. OCFA-ARIF-2025">
+				</div>
+
+
+				<!-- CREDENTIAL URL -->
+				<div class="mb-3">
+					<label for="certificationCredentialUrl" class="form-label">
+						Credential URL
+					</label>
+
+					<input type="url" id="certificationCredentialUrl" class="form-control"
+						placeholder="https://...">
+				</div>
+
+
+				<!-- SKILLS -->
+				<div class="mb-4">
+
+					<label class="form-label">
+						Skills
+					</label>
+
+					<div>
+
+						<button type="button" id="addCertificationSkill" class="btn btn-outline-primary btn-sm">
+							+ Add Skill
+						</button>
+
+						<div id="certificationSkillContainer" class="mt-3"></div>
+
+					</div>
+
+				</div>
+
+
+				<!-- MEDIA -->
+				<div class="mb-3">
+
+					<label class="form-label fw-semibold">
+						Media
+					</label>
+
+					<p class="text-muted small mb-2">
+						Add certificate images or related media.
+					</p>
+
+					<input type="file" id="certificationMediaInput" accept="image/*" hidden>
+
+					<button type="button" id="addCertificationMedia" class="btn btn-outline-primary btn-sm">
+						+ Add Media
+					</button>
+
+					<div id="certificationMediaContainer" class="d-flex flex-wrap gap-2 mt-3"></div>
+
+				</div>
+
+			</div>
+
+
+			<div class="modal-footer">
+				<button type="button" id="btnSaveCertification" class="btn btn-primary">
+					Save
+				</button>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<!-- CERTIFICATION MEDIA MODAL -->
+<div class="modal fade" id="certificationMediaModal" data-bs-backdrop="static" tabindex="-1">
+	<div class="modal-dialog modal-dialog-centered modal-lg">
+
+		<div class="modal-content">
+
+			<div class="modal-header">
+
+				<h5 class="modal-title">
+					Edit media
+				</h5>
+
+				<button type="button" class="btn-close" id="closeCertificationMedia"></button>
+
+			</div>
+
+
+			<div class="modal-body">
+
+				<div class="mb-3">
+					<label class="form-label">
+						Title
+					</label>
+
+					<input type="text" id="certificationMediaTitle" class="form-control">
+				</div>
+
+
+				<div class="mb-3">
+					<label class="form-label">
+						Description
+					</label>
+
+					<textarea id="certificationMediaDescription" class="form-control" rows="4"></textarea>
+				</div>
+
+
+				<div id="certificationMediaPreview"></div>
+
+			</div>
+
+
+			<div class="modal-footer justify-content-between">
+
+				<button type="button" id="deleteCertificationMedia"
+					class="btn btn-link text-danger text-decoration-none d-none">
+					Delete
+				</button>
+
+
+				<div>
+					<button type="button" id="backCertificationMedia" class="btn btn-outline-secondary">
+						Back
+					</button>
+
+					<button type="button" id="saveCertificationMedia" class="btn btn-primary">
+						Save
+					</button>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
 	</main>
 
 	<script src="../libs/jquery-4.0.0.min.js"></script>
@@ -285,9 +381,1311 @@
 	<script src="../libs/sweetalert2@11.js"></script>
 	<script src="../js/layout.js"></script>
 
-	<script>
+<script>
+	/*
+	|--------------------------------------------------------------------------
+	| STATE
+	|--------------------------------------------------------------------------
+	*/
 
-	</script>
+	let certificationMode = "add";
+	let editingCertificationId = null;
+
+	let certificationMediaList = [];
+	let deletedCertificationMediaIds = [];
+
+	let selectedCertificationImage = null;
+	let editingCertificationMediaIndex = null;
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ELEMENTS
+	|--------------------------------------------------------------------------
+	*/
+
+	const certificationModalEl =
+		document.getElementById("certificationModal");
+
+	const certificationModal =
+		bootstrap.Modal.getOrCreateInstance(
+			certificationModalEl
+		);
+
+
+	const certificationMediaModalEl =
+		document.getElementById(
+			"certificationMediaModal"
+		);
+
+	const certificationMediaModal =
+		bootstrap.Modal.getOrCreateInstance(
+			certificationMediaModalEl
+		);
+
+
+	const certificationSkillContainer =
+		document.getElementById(
+			"certificationSkillContainer"
+		);
+
+	const addCertificationSkillBtn =
+		document.getElementById(
+			"addCertificationSkill"
+		);
+
+
+	const certificationMediaInput =
+		document.getElementById(
+			"certificationMediaInput"
+		);
+
+	const addCertificationMediaBtn =
+		document.getElementById(
+			"addCertificationMedia"
+		);
+
+	const certificationMediaContainer =
+		document.getElementById(
+			"certificationMediaContainer"
+		);
+
+
+	const certificationMediaTitle =
+		document.getElementById(
+			"certificationMediaTitle"
+		);
+
+	const certificationMediaDescription =
+		document.getElementById(
+			"certificationMediaDescription"
+		);
+
+	const certificationMediaPreview =
+		document.getElementById(
+			"certificationMediaPreview"
+		);
+
+
+	const saveCertificationMediaBtn =
+		document.getElementById(
+			"saveCertificationMedia"
+		);
+
+	const deleteCertificationMediaBtn =
+		document.getElementById(
+			"deleteCertificationMedia"
+		);
+
+	const backCertificationMediaBtn =
+		document.getElementById(
+			"backCertificationMedia"
+		);
+
+	const closeCertificationMediaBtn =
+		document.getElementById(
+			"closeCertificationMedia"
+		);
+
+
+	const btnSaveCertification =
+		document.getElementById(
+			"btnSaveCertification"
+		);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SKILL ROW
+	|--------------------------------------------------------------------------
+	*/
+
+	function createCertificationSkillRow(
+		skill = "",
+		proficiency = ""
+	) {
+
+		const row =
+			document.createElement("div");
+
+		row.className =
+			"certification-skill-row mb-2";
+
+
+		row.innerHTML = `
+			<div class="input-group">
+
+				<select
+					class="form-select certification-skill"
+				>
+
+					<option
+						value=""
+						disabled
+						${skill === "" ? "selected" : ""}
+					>
+						Select Skill
+					</option>
+
+					<option
+						value="Software Engineering"
+						${skill === "Software Engineering" ? "selected" : ""}
+					>
+						Software Engineering
+					</option>
+
+					<option
+						value="System Analysis"
+						${skill === "System Analysis" ? "selected" : ""}
+					>
+						System Analysis
+					</option>
+
+					<option
+						value="Database Design"
+						${skill === "Database Design" ? "selected" : ""}
+					>
+						Database Design
+					</option>
+
+					<option
+						value="Web Development"
+						${skill === "Web Development" ? "selected" : ""}
+					>
+						Web Development
+					</option>
+
+					<option
+						value="PHP"
+						${skill === "PHP" ? "selected" : ""}
+					>
+						PHP
+					</option>
+
+					<option
+						value="Laravel"
+						${skill === "Laravel" ? "selected" : ""}
+					>
+						Laravel
+					</option>
+
+					<option
+						value="JavaScript"
+						${skill === "JavaScript" ? "selected" : ""}
+					>
+						JavaScript
+					</option>
+
+					<option
+						value="MySQL"
+						${skill === "MySQL" ? "selected" : ""}
+					>
+						MySQL
+					</option>
+
+				</select>
+
+
+				<select
+					class="form-select certification-proficiency"
+				>
+
+					<option
+						value=""
+						disabled
+						${proficiency === "" ? "selected" : ""}
+					>
+						Select Proficiency
+					</option>
+
+					<option
+						value="Beginner"
+						${proficiency === "Beginner" ? "selected" : ""}
+					>
+						Beginner
+					</option>
+
+					<option
+						value="Intermediate"
+						${proficiency === "Intermediate" ? "selected" : ""}
+					>
+						Intermediate
+					</option>
+
+					<option
+						value="Advanced"
+						${proficiency === "Advanced" ? "selected" : ""}
+					>
+						Advanced
+					</option>
+
+					<option
+						value="Expert"
+						${proficiency === "Expert" ? "selected" : ""}
+					>
+						Expert
+					</option>
+
+				</select>
+
+
+				<button
+					type="button"
+					class="
+						btn
+						btn-outline-danger
+						remove-certification-skill
+					"
+				>
+					<i class="fa-solid fa-trash"></i>
+				</button>
+
+			</div>
+		`;
+
+		return row;
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD SKILL
+	|--------------------------------------------------------------------------
+	*/
+
+	addCertificationSkillBtn.addEventListener(
+		"click",
+		function () {
+
+			certificationSkillContainer.appendChild(
+				createCertificationSkillRow()
+			);
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| REMOVE SKILL
+	|--------------------------------------------------------------------------
+	*/
+
+	certificationSkillContainer.addEventListener(
+		"click",
+		function (event) {
+
+			const btn =
+				event.target.closest(
+					".remove-certification-skill"
+				);
+
+			if (!btn) {
+				return;
+			}
+
+			const row =
+				btn.closest(
+					".certification-skill-row"
+				);
+
+			if (row) {
+				row.remove();
+			}
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| RENDER SKILLS
+	|--------------------------------------------------------------------------
+	*/
+
+	function renderCertificationSkills(
+		skills = []
+	) {
+
+		certificationSkillContainer.innerHTML =
+			"";
+
+		skills.forEach(
+			function (skill) {
+
+				certificationSkillContainer.appendChild(
+					createCertificationSkillRow(
+						skill.skill,
+						skill.proficiency
+					)
+				);
+
+			}
+		);
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	addCertificationMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			editingCertificationMediaIndex =
+				null;
+
+			selectedCertificationImage =
+				null;
+
+			certificationMediaInput.value =
+				"";
+
+			deleteCertificationMediaBtn
+				.classList
+				.add("d-none");
+
+			certificationMediaInput.click();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SELECT MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	certificationMediaInput.addEventListener(
+		"change",
+		function () {
+
+			const file =
+				this.files[0];
+
+			if (!file) {
+				return;
+			}
+
+
+			if (!file.type.startsWith("image/")) {
+
+				alert(
+					"Please select an image."
+				);
+
+				this.value = "";
+
+				return;
+			}
+
+
+			const maxSize =
+				5 * 1024 * 1024;
+
+			if (file.size > maxSize) {
+
+				alert(
+					"Image must be less than 5MB."
+				);
+
+				this.value = "";
+
+				return;
+			}
+
+
+			selectedCertificationImage =
+				file;
+
+			editingCertificationMediaIndex =
+				null;
+
+
+			certificationMediaTitle.value =
+				file.name.replace(
+					/\.[^/.]+$/,
+					""
+				);
+
+			certificationMediaDescription.value =
+				"";
+
+
+			showCertificationMediaPreview(
+				file
+			);
+
+
+			certificationModalEl.addEventListener(
+				"hidden.bs.modal",
+				function () {
+
+					certificationMediaModal.show();
+
+				},
+				{
+					once: true
+				}
+			);
+
+			certificationModal.hide();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| PREVIEW MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function showCertificationMediaPreview(
+		file
+	) {
+
+		const url =
+			URL.createObjectURL(file);
+
+
+		certificationMediaPreview.innerHTML = `
+			<img
+				src="${url}"
+				class="rounded border"
+				style="
+					width:120px;
+					height:90px;
+					object-fit:cover;
+				"
+			>
+		`;
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SAVE MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	saveCertificationMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			const title =
+				certificationMediaTitle.value.trim();
+
+			const description =
+				certificationMediaDescription.value.trim();
+
+
+			if (!title) {
+
+				alert(
+					"Title is required."
+				);
+
+				return;
+			}
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| NEW
+			|--------------------------------------------------------------------------
+			*/
+
+			if (
+				editingCertificationMediaIndex ===
+				null
+			) {
+
+				if (!selectedCertificationImage) {
+					return;
+				}
+
+
+				certificationMediaList.push({
+
+					id:
+						null,
+
+					file:
+						selectedCertificationImage,
+
+					title:
+						title,
+
+					description:
+						description,
+
+					preview:
+						URL.createObjectURL(
+							selectedCertificationImage
+						)
+
+				});
+
+			}
+
+			/*
+			|--------------------------------------------------------------------------
+			| UPDATE
+			|--------------------------------------------------------------------------
+			*/
+
+			else {
+
+				certificationMediaList[
+					editingCertificationMediaIndex
+				].title =
+					title;
+
+				certificationMediaList[
+					editingCertificationMediaIndex
+				].description =
+					description;
+
+			}
+
+
+			renderCertificationMedia();
+
+			resetCertificationMediaForm();
+
+			backToCertification();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| RENDER MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function renderCertificationMedia() {
+
+		certificationMediaContainer.innerHTML =
+			"";
+
+
+		certificationMediaList.forEach(
+			function (media, index) {
+
+				const item =
+					document.createElement(
+						"div"
+					);
+
+
+				item.innerHTML = `
+					<div
+						class="position-relative"
+						style="
+							width:100px;
+							height:75px;
+						"
+					>
+
+						<img
+							src="${media.preview}"
+							class="rounded border"
+							style="
+								width:100%;
+								height:100%;
+								object-fit:cover;
+							"
+						>
+
+						<button
+							type="button"
+							class="
+								btn
+								btn-light
+								btn-sm
+								rounded-circle
+								position-absolute
+								bottom-0
+								end-0
+							"
+							onclick="
+								editCertificationMedia(${index})
+							"
+						>
+							<i class="fa-solid fa-pen"></i>
+						</button>
+
+					</div>
+
+					<small
+						class="d-block text-truncate"
+						style="width:100px;"
+					>
+						${media.title}
+					</small>
+				`;
+
+
+				certificationMediaContainer
+					.appendChild(item);
+
+			}
+		);
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| EDIT MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function editCertificationMedia(index) {
+
+		if (!certificationMediaList[index]) {
+			return;
+		}
+
+
+		editingCertificationMediaIndex =
+			index;
+
+
+		const media =
+			certificationMediaList[index];
+
+
+		selectedCertificationImage =
+			media.file ?? null;
+
+
+		certificationMediaTitle.value =
+			media.title;
+
+
+		certificationMediaDescription.value =
+			media.description ?? "";
+
+
+		certificationMediaPreview.innerHTML = `
+			<img
+				src="${media.preview}"
+				class="rounded border"
+				style="
+					width:120px;
+					height:90px;
+					object-fit:cover;
+				"
+			>
+		`;
+
+
+		deleteCertificationMediaBtn
+			.classList
+			.remove("d-none");
+
+
+		certificationModalEl.addEventListener(
+			"hidden.bs.modal",
+			function () {
+
+				certificationMediaModal.show();
+
+			},
+			{
+				once: true
+			}
+		);
+
+
+		certificationModal.hide();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| DELETE MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	deleteCertificationMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			if (
+				editingCertificationMediaIndex ===
+				null
+			) {
+				return;
+			}
+
+
+			const media =
+				certificationMediaList[
+				editingCertificationMediaIndex
+				];
+
+
+			if (media.id) {
+
+				deletedCertificationMediaIds.push(
+					media.id
+				);
+
+			}
+
+
+			if (
+				media.preview &&
+				media.preview.startsWith(
+					"blob:"
+				)
+			) {
+
+				URL.revokeObjectURL(
+					media.preview
+				);
+
+			}
+
+
+			certificationMediaList.splice(
+				editingCertificationMediaIndex,
+				1
+			);
+
+
+			renderCertificationMedia();
+
+			resetCertificationMediaForm();
+
+			backToCertification();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| BACK TO CERTIFICATION
+	|--------------------------------------------------------------------------
+	*/
+
+	function backToCertification() {
+
+		certificationMediaModalEl.addEventListener(
+			"hidden.bs.modal",
+			function () {
+
+				certificationModal.show();
+
+			},
+			{
+				once: true
+			}
+		);
+
+
+		certificationMediaModal.hide();
+	}
+
+
+	backCertificationMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			resetCertificationMediaForm();
+
+			backToCertification();
+
+		}
+	);
+
+
+	closeCertificationMediaBtn.addEventListener(
+		"click",
+		function () {
+
+			resetCertificationMediaForm();
+
+			backToCertification();
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| RESET MEDIA
+	|--------------------------------------------------------------------------
+	*/
+
+	function resetCertificationMediaForm() {
+
+		selectedCertificationImage =
+			null;
+
+		editingCertificationMediaIndex =
+			null;
+
+		certificationMediaInput.value =
+			"";
+
+		certificationMediaTitle.value =
+			"";
+
+		certificationMediaDescription.value =
+			"";
+
+		certificationMediaPreview.innerHTML =
+			"";
+
+		deleteCertificationMediaBtn
+			.classList
+			.add("d-none");
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD CERTIFICATION
+	|--------------------------------------------------------------------------
+	*/
+
+	function openAddCertification() {
+
+		certificationMode =
+			"add";
+
+		editingCertificationId =
+			null;
+
+		deletedCertificationMediaIds =
+			[];
+
+
+		document.querySelector(
+			"#certificationModal .modal-title"
+		).textContent =
+			"Add Certification";
+
+
+		btnSaveCertification.textContent =
+			"Save";
+
+
+		$("#certificationName").val("");
+
+		$("#certificationOrganization").val("");
+
+		$("#certificationCredentialId").val("");
+
+		$("#certificationCredentialUrl").val("");
+
+		$("#certificationIssueDate").val("");
+
+
+		certificationSkillContainer.innerHTML =
+			"";
+
+
+		certificationMediaList =
+			[];
+
+
+		renderCertificationMedia();
+
+
+		certificationModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| EDIT CERTIFICATION
+	|--------------------------------------------------------------------------
+	*/
+
+	function editCertification(id) {
+
+		certificationMode =
+			"edit";
+
+		editingCertificationId =
+			id;
+
+		deletedCertificationMediaIds =
+			[];
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| DUMMY DATA
+		|--------------------------------------------------------------------------
+		*/
+
+		const data = {
+
+			id:
+				id,
+
+			certification_name:
+				"Oracle Certified Foundations Associate, Database",
+
+			issuing_organization:
+				"Oracle Academy",
+
+			credential_id:
+				"OCFA-ARIF-2025",
+
+			credential_url:
+				"https://example.com/certificate",
+
+			issue_date:
+				"2025-10-01",
+
+			skills: [
+
+				{
+					skill:
+						"Database Design",
+
+					proficiency:
+						"Advanced"
+				},
+
+				{
+					skill:
+						"MySQL",
+
+					proficiency:
+						"Advanced"
+				}
+
+			],
+
+			media: [
+
+				{
+					id:
+						1,
+
+					file:
+						null,
+
+					title:
+						"Oracle Certificate",
+
+					description:
+						"Oracle certification certificate",
+
+					preview:
+						"../images/cover-image.png"
+				}
+
+			]
+
+		};
+
+
+		document.querySelector(
+			"#certificationModal .modal-title"
+		).textContent =
+			"Edit Certification";
+
+
+		btnSaveCertification.textContent =
+			"Update";
+
+
+		$("#certificationName").val(
+			data.certification_name
+		);
+
+		$("#certificationOrganization").val(
+			data.issuing_organization
+		);
+
+		$("#certificationCredentialId").val(
+			data.credential_id
+		);
+
+		$("#certificationCredentialUrl").val(
+			data.credential_url
+		);
+
+		$("#certificationIssueDate").val(
+			data.issue_date
+		);
+
+
+		renderCertificationSkills(
+			data.skills ?? []
+		);
+
+
+		certificationMediaList =
+			data.media ?? [];
+
+
+		renderCertificationMedia();
+
+
+		certificationModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SAVE CERTIFICATION
+	|--------------------------------------------------------------------------
+	*/
+
+	btnSaveCertification.addEventListener(
+		"click",
+		function () {
+
+			const formData =
+				new FormData();
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| BASIC
+			|--------------------------------------------------------------------------
+			*/
+
+			formData.append(
+				"certification_name",
+				$("#certificationName").val()
+			);
+
+			formData.append(
+				"issuing_organization",
+				$("#certificationOrganization").val()
+			);
+
+			formData.append(
+				"credential_id",
+				$("#certificationCredentialId").val()
+			);
+
+			formData.append(
+				"credential_url",
+				$("#certificationCredentialUrl").val()
+			);
+
+			formData.append(
+				"issue_date",
+				$("#certificationIssueDate").val()
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| SKILLS
+			|--------------------------------------------------------------------------
+			*/
+
+			document.querySelectorAll(
+				".certification-skill-row"
+			).forEach(
+				function (row, index) {
+
+					formData.append(
+						`skills[${index}][skill]`,
+						row.querySelector(
+							".certification-skill"
+						).value
+					);
+
+					formData.append(
+						`skills[${index}][proficiency]`,
+						row.querySelector(
+							".certification-proficiency"
+						).value
+					);
+
+				}
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| MEDIA
+			|--------------------------------------------------------------------------
+			*/
+
+			certificationMediaList.forEach(
+				function (media, index) {
+
+					if (media.id) {
+
+						formData.append(
+							`media[${index}][id]`,
+							media.id
+						);
+
+					}
+
+
+					if (media.file) {
+
+						formData.append(
+							`media[${index}][file]`,
+							media.file
+						);
+
+					}
+
+
+					formData.append(
+						`media[${index}][title]`,
+						media.title
+					);
+
+					formData.append(
+						`media[${index}][description]`,
+						media.description ?? ""
+					);
+
+				}
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| DELETED MEDIA
+			|--------------------------------------------------------------------------
+			*/
+
+			deletedCertificationMediaIds.forEach(
+				function (id, index) {
+
+					formData.append(
+						`deleted_media_ids[${index}]`,
+						id
+					);
+
+				}
+			);
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| ADD / EDIT
+			|--------------------------------------------------------------------------
+			*/
+
+			let url;
+
+
+			if (
+				certificationMode ===
+				"add"
+			) {
+
+				url =
+					"/certifications";
+
+			} else {
+
+				url =
+					`/certifications/${editingCertificationId}`;
+
+				formData.append(
+					"_method",
+					"PUT"
+				);
+
+			}
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| DEBUG
+			|--------------------------------------------------------------------------
+			*/
+
+			console.log(
+				"MODE:",
+				certificationMode
+			);
+
+			console.log(
+				"URL:",
+				url
+			);
+
+
+			for (
+				const [key, value]
+				of formData.entries()
+			) {
+
+				console.log(
+					key,
+					value
+				);
+
+			}
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| AJAX
+			|--------------------------------------------------------------------------
+			*/
+
+			$.ajax({
+
+				url:
+					url,
+
+				type:
+					"POST",
+
+				data:
+					formData,
+
+				processData:
+					false,
+
+				contentType:
+					false,
+
+				success:
+					function (response) {
+
+						console.log(
+							response
+						);
+
+						certificationModal.hide();
+
+					},
+
+				error:
+					function (xhr) {
+
+						console.log(
+							xhr.responseJSON
+						);
+
+					}
+
+			});
+
+		}
+	);
+</script>
 </body>
 
 </html>

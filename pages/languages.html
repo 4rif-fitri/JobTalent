@@ -126,8 +126,7 @@
 						<h3 class="fw-bold">Languages</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal"
-							data-bs-target="#addLanguagesModal">
+						<button type="button" class="btn bg-primary icon" onclick="openAddLanguage()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -137,8 +136,7 @@
 
 				<article class="m-1 position-relative">
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateLanguagesModal">
+						<button type="button" class="btn btn-secondary icon" onclick="editLanguage(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
@@ -147,108 +145,131 @@
 					<p>Native</p>
 				</article>
 
-				<hr>
 
-				<article class="m-1 position-relative">
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateLanguagesModal">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
+
+
+			</div>
+		</div>
+
+		<div class="modal fade" id="languageModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+
+				<div class="modal-content">
+
+					<div class="modal-header">
+
+						<h5 class="modal-title">
+							Add Language
+						</h5>
+
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
 					</div>
 
-					<p class="fw-bold">English</p>
-					<p>Professional working proficiency</=>
-				</article>
 
+					<div class="modal-body">
 
-			</div>
-		</div>
+						<!-- LANGUAGE -->
+						<div class="mb-3">
 
-		<div class="modal fade" id="addLanguagesModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-					<form id="addLanguageForm" action="#" method="POST">
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Add Languages</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
+							<label for="languageSelect" class="form-label">
+								Language
+							</label>
+
+							<select id="languageSelect" class="form-select" required>
+								<option value="" selected disabled>
+									Select Language
+								</option>
+
+								<option value="1">
+									Bahasa Melayu
+								</option>
+
+								<option value="2">
+									English
+								</option>
+
+								<option value="3">
+									Mandarin
+								</option>
+
+								<option value="4">
+									Tamil
+								</option>
+
+								<option value="5">
+									Arabic
+								</option>
+
+								<option value="6">
+									Japanese
+								</option>
+
+								<option value="7">
+									Korean
+								</option>
+							</select>
+
 						</div>
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<select class="form-select" id="languageSelect" name="language" required>
-									<option selected disabled value="">Select Language</option>
-									<option value="1">Malay</option>
-									<option value="2">English</option>
-									<option value="3">Mandarin</option>
-									<option value="4">Tamil</option>
-									<option value="5">Arabic</option>
-									<option value="6">Japanese</option>
-								</select>
-							</div>
-							<div class="input-group mb-3">
-								<select class="form-select" id="proficiencySelect" name="proficiency" required>
-									<option selected disabled value="">Select Proficiency</option>
-									<option value="Native">Native</option>
-									<option value="Fluent">Fluent</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Basic">Basic</option>
-								</select>
-							</div>
+
+
+						<!-- PROFICIENCY -->
+						<div class="mb-3">
+
+							<label for="languageProficiency" class="form-label">
+								Proficiency
+							</label>
+
+							<select id="languageProficiency" class="form-select" required>
+
+								<option value="" selected disabled>
+									Select Proficiency
+								</option>
+
+								<option value="elementary">
+									Elementary proficiency
+								</option>
+
+								<option value="limited_working">
+									Limited working proficiency
+								</option>
+
+								<option value="professional_working">
+									Professional working proficiency
+								</option>
+
+								<option value="full_professional">
+									Full professional proficiency
+								</option>
+
+								<option value="native">
+									Native or bilingual proficiency
+								</option>
+
+							</select>
 
 						</div>
 
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary">Save</button>
-						</div>
-					</form>
+					</div>
+
+
+					<div class="modal-footer justify-content-between">
+
+						<button type="button" id="btnDeleteLanguage"
+							class="btn btn-link text-danger text-decoration-none d-none">
+							Delete
+						</button>
+
+						<button type="button" id="btnSaveLanguage" class="btn btn-primary">
+							Save
+						</button>
+
+					</div>
+
 				</div>
+
 			</div>
 		</div>
-
-		<div class="modal fade" id="updateLanguagesModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-					<form id="updateLanguageForm" action="#" method="POST">
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Update Languages</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-
-							<div class="input-group mb-3">
-								<select class="form-select" id="languageSelect" name="language" required>
-									<option selected disabled value="">Select Language</option>
-									<option value="1">Malay</option>
-									<option value="2">English</option>
-									<option value="3">Mandarin</option>
-									<option value="4">Tamil</option>
-									<option value="5">Arabic</option>
-									<option value="6">Japanese</option>
-								</select>
-							</div>
-							<div class="input-group mb-3">
-								<select class="form-select" id="proficiencySelect" name="proficiency" required>
-									<option selected disabled value="">Select Proficiency</option>
-									<option value="Native">Native</option>
-									<option value="Fluent">Fluent</option>
-									<option value="Intermediate">Intermediate</option>
-									<option value="Basic">Basic</option>
-								</select>
-							</div>
-
-						</div>
-
-						<div class="modal-footer d-flex justify-content-between">
-							<button type="button" class="btn btn-danger">Delete</button>
-							<button type="submit" class="btn btn-primary">Save</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-
 	</main>
 
 	<script src="../libs/jquery-4.0.0.min.js"></script>
@@ -258,8 +279,376 @@
 	<script src="../libs/sweetalert2@11.js"></script>
 	<script src="../js/layout.js"></script>
 
-	<script>
 
+	<script>
+		/*
+		|--------------------------------------------------------------------------
+		| STATE
+		|--------------------------------------------------------------------------
+		*/
+
+		let languageMode = "add";
+		let editingStudentLanguageId = null;
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ELEMENTS
+		|--------------------------------------------------------------------------
+		*/
+
+		const languageModalEl =
+			document.getElementById("languageModal");
+
+		const languageModal =
+			bootstrap.Modal.getOrCreateInstance(
+				languageModalEl
+			);
+
+		const languageSelect =
+			document.getElementById(
+				"languageSelect"
+			);
+
+		const languageProficiency =
+			document.getElementById(
+				"languageProficiency"
+			);
+
+		const btnSaveLanguage =
+			document.getElementById(
+				"btnSaveLanguage"
+			);
+
+		const btnDeleteLanguage =
+			document.getElementById(
+				"btnDeleteLanguage"
+			);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| ADD LANGUAGE
+		|--------------------------------------------------------------------------
+		*/
+
+		function openAddLanguage() {
+
+			languageMode =
+				"add";
+
+			editingStudentLanguageId =
+				null;
+
+
+			document.querySelector(
+				"#languageModal .modal-title"
+			).textContent =
+				"Add Language";
+
+
+			btnSaveLanguage.textContent =
+				"Save";
+
+
+			btnDeleteLanguage.classList.add(
+				"d-none"
+			);
+
+
+			languageSelect.value =
+				"";
+
+			languageProficiency.value =
+				"";
+
+
+			languageModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| EDIT LANGUAGE
+		|--------------------------------------------------------------------------
+		*/
+
+		function editLanguage(id) {
+
+			languageMode =
+				"edit";
+
+			editingStudentLanguageId =
+				id;
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| DUMMY DATA
+			| Nanti tukar kepada AJAX GET
+			|--------------------------------------------------------------------------
+			*/
+
+			const data = {
+
+				id:
+					id,
+
+				language_id:
+					"2",
+
+				proficiency_level:
+					"professional_working"
+
+			};
+
+
+			document.querySelector(
+				"#languageModal .modal-title"
+			).textContent =
+				"Edit Language";
+
+
+			btnSaveLanguage.textContent =
+				"Update";
+
+
+			btnDeleteLanguage.classList.remove(
+				"d-none"
+			);
+
+
+			languageSelect.value =
+				data.language_id;
+
+			languageProficiency.value =
+				data.proficiency_level;
+
+
+			languageModal.show();
+		}
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| SAVE / UPDATE
+		|--------------------------------------------------------------------------
+		*/
+
+		btnSaveLanguage.addEventListener(
+			"click",
+			function () {
+
+				const languageId =
+					languageSelect.value;
+
+				const proficiency =
+					languageProficiency.value;
+
+
+				if (!languageId) {
+
+					alert(
+						"Please select a language."
+					);
+
+					return;
+				}
+
+
+				if (!proficiency) {
+
+					alert(
+						"Please select proficiency."
+					);
+
+					return;
+				}
+
+
+				const data = {
+
+					language_id:
+						languageId,
+
+					proficiency_level:
+						proficiency
+
+				};
+
+
+				let url;
+				let type;
+
+
+				/*
+				|--------------------------------------------------------------------------
+				| ADD
+				|--------------------------------------------------------------------------
+				*/
+
+				if (
+					languageMode === "add"
+				) {
+
+					url =
+						"/student-languages";
+
+					type =
+						"POST";
+
+				}
+
+				/*
+				|--------------------------------------------------------------------------
+				| UPDATE
+				|--------------------------------------------------------------------------
+				*/
+
+				else {
+
+					url =
+						`/student-languages/${editingStudentLanguageId}`;
+
+					type =
+						"PUT";
+
+				}
+
+
+				console.log(
+					"MODE:",
+					languageMode
+				);
+
+				console.log(
+					"URL:",
+					url
+				);
+
+				console.log(
+					data
+				);
+
+
+				$.ajax({
+
+					url:
+						url,
+
+					type:
+						type,
+
+					data:
+						data,
+
+					success:
+						function (response) {
+
+							console.log(
+								response
+							);
+
+							languageModal.hide();
+
+						},
+
+					error:
+						function (xhr) {
+
+							console.log(
+								xhr.responseJSON
+							);
+
+						}
+
+				});
+
+			}
+		);
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| DELETE
+		|--------------------------------------------------------------------------
+		*/
+
+		btnDeleteLanguage.addEventListener(
+			"click",
+			function () {
+
+				if (
+					languageMode !== "edit" ||
+					!editingStudentLanguageId
+				) {
+					return;
+				}
+
+
+				Swal.fire({
+
+					title:
+						"Delete language?",
+
+					text:
+						"This language will be removed from your profile.",
+
+					icon:
+						"warning",
+
+					showCancelButton:
+						true,
+
+					confirmButtonText:
+						"Delete",
+
+					cancelButtonText:
+						"Cancel"
+
+				}).then(
+					function (result) {
+
+						if (!result.isConfirmed) {
+							return;
+						}
+
+
+						$.ajax({
+
+							url:
+								`/student-languages/${editingStudentLanguageId}`,
+
+							type:
+								"DELETE",
+
+							success:
+								function (response) {
+
+									console.log(
+										response
+									);
+
+									languageModal.hide();
+
+								},
+
+							error:
+								function (xhr) {
+
+									console.log(
+										xhr.responseJSON
+									);
+
+								}
+
+						});
+
+					}
+				);
+
+			}
+		);
 	</script>
 </body>
 

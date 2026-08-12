@@ -126,8 +126,7 @@
 						<h3 class="fw-bold">Links</h3>
 					</div>
 					<div>
-						<button type="button" class="btn bg-primary icon" data-bs-toggle="modal"
-							data-bs-target="#addLinkModal">
+						<button type="button" class="btn bg-primary icon" onclick="openAddSocialLink()">
 							<i class="fa-solid fas fa-plus text-white"></i>
 						</button>
 					</div>
@@ -136,116 +135,114 @@
 				<hr>
 
 				<article class="m-1 position-relative">
+
 					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateLinkModal">
+						<button type="button" class="btn btn-secondary icon" onclick="editSocialLink(15)">
 							<i class="fa-solid fa-pencil"></i>
 						</button>
 					</div>
 
-					<p class="fw-bold">Database</p>
-					<p>Advanced</p>
-				</article>
+					<div class="d-flex align-items-center gap-3">
 
-				<hr>
 
-				<article class="m-1 position-relative">
-					<div class="icon-container" style="top: 0; right: 0;">
-						<button type="button" class="btn btn-secondary icon" data-bs-toggle="modal"
-							data-bs-target="#updateLinkModal">
-							<i class="fa-solid fa-pencil"></i>
-						</button>
+						<div>
+							<p class="fw-bold mb-1">LinkedIn</p>
+
+							<a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer">
+								https://linkedin.com/in/example
+							</a>
+						</div>
+
 					</div>
 
-					<p class="fw-bold">Database</p>
-					<p>Advanced</p>
 				</article>
 
+
 			</div>
 		</div>
+		<div class="modal fade" id="socialLinkModal" data-bs-backdrop="static" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
 
-		<div class="modal fade" id="addLinkModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
 				<div class="modal-content">
-					<form id="addSkillForm" action="#" method="POST">
 
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Add Skill</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
+					<div class="modal-header">
+
+						<h5 class="modal-title">
+							Add Link
+						</h5>
+
+						<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+					</div>
+
+					<div class="modal-body">
+
+						<div class="mb-3">
+
+							<label for="socialMediaSelect" class="form-label">
+								Platform
+							</label>
+
+							<select id="socialMediaSelect" class="form-select" required>
+								<option value="" selected disabled>
+									Select Platform
+								</option>
+
+								<option value="1">
+									LinkedIn
+								</option>
+
+								<option value="2">
+									GitHub
+								</option>
+
+								<option value="3">
+									Facebook
+								</option>
+
+								<option value="4">
+									Instagram
+								</option>
+
+								<option value="5">
+									X / Twitter
+								</option>
+
+								<option value="6">
+									YouTube
+								</option>
+							</select>
+
 						</div>
 
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">Social Media</span>
-								<select class="form-select" id="linkSelect" name="link" required>
-									<option selected disabled value="">Select Platform / Skill</option>
-									<option value="1">Youtube</option>
-									<option value="2">Facebook</option>
-									<option value="3">Instagram</option>
-									<option value="4">Tiktok</option>
-									<option value="5">Github</option>
-									<option value="6">MySQL</option>
-									<option value="7">HTML & CSS</option>
-								</select>
-							</div>
+						<div class="mb-3">
 
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">Link</span>
-								<input type="url" class="form-control" name="url" placeholder="https://..."
-									aria-label="URL" aria-describedby="basic-addon1" required>
-							</div>
+							<label for="socialLinkInput" class="form-label">
+								Link
+							</label>
+
+							<input type="url" id="socialLinkInput" class="form-control"
+								placeholder="https://linkedin.com/in/username" required>
+
 						</div>
 
-						<div class="modal-footer">
-							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
-						</div>
+					</div>
 
-					</form>
+					<div class="modal-footer justify-content-between">
+
+						<button type="button" id="btnDeleteSocialLink"
+							class="btn btn-link text-danger text-decoration-none d-none">
+							Delete
+						</button>
+
+						<button type="button" id="btnSaveSocialLink" class="btn btn-primary">
+							Save
+						</button>
+
+					</div>
+
 				</div>
-			</div>
-		</div>
 
-		<div class="modal fade" id="updateLinkModal" data-bs-backdrop="static" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
-				<div class="modal-content">
-					<form id="updateSkillForm" action="#" method="POST">
-
-						<div class="modal-header">
-							<h1 class="h3 modal-title fs-5">Update Skill</h1>
-							<button type="reset" class="btn-close" data-bs-dismiss="modal"
-								aria-label="Close"></button>
-						</div>
-
-						<div class="modal-body">
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">Social Media</span>
-								<select class="form-select" id="linkSelect" name="link" required>
-									<option selected disabled value="">Select Platform / Skill</option>
-									<option value="1">Youtube</option>
-									<option value="2">Facebook</option>
-									<option value="3">Instagram</option>
-									<option value="4">Tiktok</option>
-									<option value="5">Github</option>
-									<option value="6">MySQL</option>
-									<option value="7">HTML & CSS</option>
-								</select>
-							</div>
-
-							<div class="input-group mb-3">
-								<span class="input-group-text" id="basic-addon1">Link</span>
-								<input type="url" class="form-control" name="url" placeholder="https://..."
-									aria-label="URL" aria-describedby="basic-addon1" required>
-							</div>
-						</div>
-
-						<div class="modal-footer d-flex justify-content-between">
-							<button type="button" class="btn btn-danger">Delete</button>
-							<button type="submit" class="btn btn-primary" id="btnSaveSkill">Save</button>
-						</div>
-
-					</form>
-				</div>
 			</div>
 		</div>
 	</main>
@@ -257,9 +254,380 @@
 	<script src="../libs/sweetalert2@11.js"></script>
 	<script src="../js/layout.js"></script>
 
-	<script>
+<script>
+	/*
+	|--------------------------------------------------------------------------
+	| STATE
+	|--------------------------------------------------------------------------
+	*/
 
-	</script>
+	let socialLinkMode = "add";
+	let editingSocialLinkId = null;
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ELEMENTS
+	|--------------------------------------------------------------------------
+	*/
+
+	const socialLinkModalEl =
+		document.getElementById(
+			"socialLinkModal"
+		);
+
+	const socialLinkModal =
+		bootstrap.Modal.getOrCreateInstance(
+			socialLinkModalEl
+		);
+
+	const socialMediaSelect =
+		document.getElementById(
+			"socialMediaSelect"
+		);
+
+	const socialLinkInput =
+		document.getElementById(
+			"socialLinkInput"
+		);
+
+	const btnSaveSocialLink =
+		document.getElementById(
+			"btnSaveSocialLink"
+		);
+
+	const btnDeleteSocialLink =
+		document.getElementById(
+			"btnDeleteSocialLink"
+		);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| ADD
+	|--------------------------------------------------------------------------
+	*/
+
+	function openAddSocialLink() {
+
+		socialLinkMode =
+			"add";
+
+		editingSocialLinkId =
+			null;
+
+
+		document.querySelector(
+			"#socialLinkModal .modal-title"
+		).textContent =
+			"Add Link";
+
+
+		btnSaveSocialLink.textContent =
+			"Save";
+
+
+		btnDeleteSocialLink
+			.classList
+			.add("d-none");
+
+
+		socialMediaSelect.value =
+			"";
+
+		socialLinkInput.value =
+			"";
+
+
+		socialLinkModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| EDIT
+	|--------------------------------------------------------------------------
+	*/
+
+	function editSocialLink(id) {
+
+		socialLinkMode =
+			"edit";
+
+		editingSocialLinkId =
+			id;
+
+
+		/*
+		|--------------------------------------------------------------------------
+		| DUMMY DATA
+		| Nanti ganti dengan GET /social-media-links/{id}
+		|--------------------------------------------------------------------------
+		*/
+
+		const data = {
+
+			id:
+				id,
+
+			social_media_id:
+				"1",
+
+			link:
+				"https://linkedin.com/in/example"
+
+		};
+
+
+		document.querySelector(
+			"#socialLinkModal .modal-title"
+		).textContent =
+			"Edit Link";
+
+
+		btnSaveSocialLink.textContent =
+			"Update";
+
+
+		btnDeleteSocialLink
+			.classList
+			.remove("d-none");
+
+
+		socialMediaSelect.value =
+			data.social_media_id;
+
+		socialLinkInput.value =
+			data.link;
+
+
+		socialLinkModal.show();
+	}
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| SAVE / UPDATE
+	|--------------------------------------------------------------------------
+	*/
+
+	btnSaveSocialLink.addEventListener(
+		"click",
+		function () {
+
+			const socialMediaId =
+				socialMediaSelect.value;
+
+			const link =
+				socialLinkInput.value.trim();
+
+
+			if (!socialMediaId) {
+
+				alert(
+					"Please select a platform."
+				);
+
+				return;
+			}
+
+
+			if (!link) {
+
+				alert(
+					"Please enter a link."
+				);
+
+				socialLinkInput.focus();
+
+				return;
+			}
+
+
+			const data = {
+
+				social_media_id:
+					socialMediaId,
+
+				link:
+					link
+
+			};
+
+
+			let url;
+			let type;
+
+
+			/*
+			|--------------------------------------------------------------------------
+			| ADD
+			|--------------------------------------------------------------------------
+			*/
+
+			if (
+				socialLinkMode === "add"
+			) {
+
+				url =
+					"/social-media-links";
+
+				type =
+					"POST";
+
+			}
+
+			/*
+			|--------------------------------------------------------------------------
+			| UPDATE
+			|--------------------------------------------------------------------------
+			*/
+
+			else {
+
+				url =
+					`/social-media-links/${editingSocialLinkId}`;
+
+				type =
+					"PUT";
+
+			}
+
+
+			console.log(
+				"MODE:",
+				socialLinkMode
+			);
+
+			console.log(
+				"URL:",
+				url
+			);
+
+			console.log(
+				data
+			);
+
+
+			$.ajax({
+
+				url:
+					url,
+
+				type:
+					type,
+
+				data:
+					data,
+
+				success:
+					function (response) {
+
+						console.log(
+							response
+						);
+
+						socialLinkModal.hide();
+
+					},
+
+				error:
+					function (xhr) {
+
+						console.log(
+							xhr.responseJSON
+						);
+
+					}
+
+			});
+
+		}
+	);
+
+
+	/*
+	|--------------------------------------------------------------------------
+	| DELETE
+	|--------------------------------------------------------------------------
+	*/
+
+	btnDeleteSocialLink.addEventListener(
+		"click",
+		function () {
+
+			if (
+				socialLinkMode !== "edit" ||
+				!editingSocialLinkId
+			) {
+				return;
+			}
+
+
+			Swal.fire({
+
+				title:
+					"Delete link?",
+
+				text:
+					"This social media link will be removed.",
+
+				icon:
+					"warning",
+
+				showCancelButton:
+					true,
+
+				confirmButtonText:
+					"Delete",
+
+				cancelButtonText:
+					"Cancel"
+
+			}).then(
+				function (result) {
+
+					if (!result.isConfirmed) {
+						return;
+					}
+
+
+					$.ajax({
+
+						url:
+							`/social-media-links/${editingSocialLinkId}`,
+
+						type:
+							"DELETE",
+
+						success:
+							function (response) {
+
+								console.log(
+									response
+								);
+
+								socialLinkModal.hide();
+
+							},
+
+						error:
+							function (xhr) {
+
+								console.log(
+									xhr.responseJSON
+								);
+
+							}
+
+					});
+
+				}
+			);
+
+		}
+	);
+</script>
 </body>
 
 </html>
