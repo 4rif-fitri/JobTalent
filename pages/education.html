@@ -629,7 +629,7 @@
 		}
 
 		saveMediaBtn.addEventListener("click", function () {
-			if (editingMediaIndex === null && !selectedImage)  return
+			if (editingMediaIndex === null && !selectedImage) return
 
 			let title = mediaTitle.value.trim();
 			let description = mediaDescription.value.trim();
@@ -650,8 +650,8 @@
 					description: description,
 					preview: previewURL
 				});
-			
-			}else {
+
+			} else {
 				mediaList[editingMediaIndex].title = title;
 				mediaList[editingMediaIndex].description = description;
 			}

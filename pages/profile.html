@@ -4,15 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<title>TalentBank</title>
-
 	<link rel="shortcut icon" href="" type="image/x-icon">
-
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 	<link rel="stylesheet" href="../libs/bootstrap.min.css">
-
 	<script>
 		if (
 			window.innerWidth > 768 &&
@@ -23,17 +18,12 @@
 			);
 		}
 	</script>
-
 	<link rel="stylesheet" href="../style/layout.css">
 	<link rel="stylesheet" href="../style/style.css">
 </head>
 
 
 <body>
-
-	<!-- =========================================================
-		SIDEBAR
-	========================================================= -->
 
 	<aside class="sidebar">
 
@@ -112,13 +102,7 @@
 
 	</aside>
 
-
 	<div class="sidebar-overlay"></div>
-
-
-	<!-- =========================================================
-		TOPBAR
-	========================================================= -->
 
 	<header class="topbar">
 
@@ -155,11 +139,6 @@
 		</div>
 
 	</header>
-
-
-	<!-- =========================================================
-		MAIN
-	========================================================= -->
 
 	<main class="main-content">
 
@@ -305,10 +284,12 @@
 					</div>
 
 					<nav class="horizontal-nav d-flex gap-4 px-3">
-						<button type="button" class="profile-tab active d-flex justify-content-center" data-target="main">
+						<button type="button" class="profile-tab active d-flex justify-content-center"
+							data-target="main">
 							Main
 						</button>
-						<button type="button" class="profile-tab d-flex justify-content-center" data-target="result">
+						<button type="button" class="profile-tab d-flex justify-content-center"
+							data-target="result">
 							Result Sem
 						</button>
 					</nav>
@@ -1421,7 +1402,9 @@
 
 	<script>
 		$(document).ready(function () {
-
+			console.log("jQuery loaded");
+			console.log($("#btnEditProfile").length);
+			
 			let resultLoaded = false;
 			$(".profile-tab").on("click", function () {
 				$(".profile-tab").removeClass("active");
@@ -1431,7 +1414,7 @@
 				if (target === "main") {
 					$("#mainTabContent").removeClass("d-none");
 					$("#resultTabContent").addClass("d-none");
-				
+
 				} else if (target === "result") {
 					$("#mainTabContent").addClass("d-none");
 					$("#resultTabContent").removeClass("d-none");
@@ -1626,6 +1609,8 @@
 			}
 
 			$("#btnEditProfile").on("click", function () {
+				console.log("asd");
+				return
 				showProfileLoading();
 
 				$.ajax({

@@ -187,6 +187,7 @@
 
 			</div>
 		</div>
+
 		<!-- ADD / EDIT EXPERIENCE MODAL -->
 		<div class="modal fade" id="experienceModal" data-bs-backdrop="static" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
@@ -325,19 +326,6 @@
 
 						</div>
 
-
-						<!-- CURRENTLY WORKING -->
-						<!-- <div class="form-check mb-3">
-
-							<input class="form-check-input" type="checkbox" id="experienceCurrent">
-
-							<label class="form-check-label" for="experienceCurrent">
-								I currently work here
-							</label>
-
-						</div> -->
-
-
 						<!-- DESCRIPTION -->
 						<div class="mb-3">
 
@@ -407,7 +395,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- EXPERIENCE MEDIA MODAL -->
+
 		<div class="modal fade" id="experienceMediaModal" data-bs-backdrop="static" tabindex="-1">
 			<div class="modal-dialog modal-dialog-centered modal-lg">
 
@@ -487,11 +475,6 @@
 	<script src="../js/layout.js"></script>
 
 	<script>
-		/*
-		|--------------------------------------------------------------------------
-		| STATE
-		|--------------------------------------------------------------------------
-		*/
 
 		let experienceMode = "add";
 		let editingExperienceId = null;
@@ -1121,48 +1104,20 @@
 
 
 					item.innerHTML = `
-				<div
-					class="position-relative"
-					style="
-						width:100px;
-						height:75px;
-					"
-				>
-
-					<img
-						src="${media.preview}"
+				<div class="position-relative" style=" width:100px; height:75px;">
+					<img src="${media.preview}"
 						class="rounded border"
-						style="
-							width:100%;
-							height:100%;
-							object-fit:cover;
-						"
-					>
+						style="width:100%; height:100%; object-fit:cover;">
 
-					<button
-						type="button"
-						class="
-							btn
-							btn-light
-							btn-sm
-							rounded-circle
-							position-absolute
-							bottom-0
-							end-0
-						"
-						onclick="
-							editExperienceMedia(${index})
-						"
-					>
+					<button type="button"
+						class="btn btn-light btn-sm rounded-circle position-absolute bottom-0 end-0"
+						onclick="editExperienceMedia(${index})">
 						<i class="fa-solid fa-pen"></i>
 					</button>
-
 				</div>
 
-				<small
-					class="d-block text-truncate"
-					style="width:100px;"
-				>
+				<small class="d-block text-truncate"
+					  style="width:100px;">
 					${media.title}
 				</small>
 			`;
